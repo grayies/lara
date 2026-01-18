@@ -1,0 +1,1453 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="codegrid" />
+    <title>Lara perfumes</title>
+    <!-- Google Fonts for Material Symbols -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --special-color: #7f4c21;
+      }
+      .second-screen {
+        display: block !important;
+      }
+      .page-bestseller {
+        display: block;
+      }
+      .content {
+        overflow-x: hidden !important;
+        min-height: calc(100vh - 100px) !important;
+        height: auto !important;
+        padding: 0 0 60px !important;
+        top: -100px;
+      }
+      .container {
+        background: #fff8f3 !important;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .nav {
+        top: 0 !important;
+      }
+
+      .container-product {
+        background: #fff8f3 !important;
+      }
+      .speacial-text-container {
+        top: 100px;
+      }
+      .star-rating-input {
+        direction: rtl; /* important trick */
+        display: inline-block;
+      }
+
+      .star-rating-input label {
+        color: #444;
+        transition: color 0.2s;
+        cursor: pointer;
+      }
+
+      .star-rating-input input[type="radio"]:checked ~ label,
+      .star-rating-input label:hover,
+      .star-rating-input label:hover ~ label {
+        color: #f5c518; /* gold / yellow */
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/CustomEase.min.js"></script>
+    <link rel="stylesheet" href="static/css/master.css" />
+    <link rel="stylesheet" href="static/css/product.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.20/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <!-- <script src="main.js"></script> -->
+  </head>
+  <body>
+    <div class="section-indicator">
+      <span class="section-text">hero-01</span>
+    </div>
+    <nav class="nav">
+      <!-- menu -->
+
+      <!-- <div class="menu-toggle closed">
+        <div class="menu-toggle-icon">
+          <div class="hamburger">
+            <div class="menu-bar" data-position="top"></div>
+            <div class="menu-bar" data-position="bottom"></div>
+          </div>
+        </div>
+        <div class="menu-copy"><p>Menu</p></div>
+      </div> -->
+
+      <!-- <div class="menu-toggle closed">
+        <div class="menu-toggle-icon">
+          <div class="hamburger">
+            <div class="menu-bar" data-position="top"></div>
+            <div class="menu-bar" data-position="bottom"></div>
+          </div>
+        </div>
+        <div class="menu-copy"><p>Menu</p></div>
+      </div> -->
+
+      <div class="menu">
+        <div class="col col-1">
+          <!-- <div class="menu-logo"><a href="#">LARA</a></div> -->
+          <div class="links">
+            <div class="link">
+              <a href="perfumes.html">Perfumes</a>
+            </div>
+            <div class="link">
+              <a href="samples.html">samples</a>
+            </div>
+            <div class="link">
+              <a href="collections.html">collections</a>
+            </div>
+            <div class="link"><a href="story.html">story</a></div>
+          </div>
+          <div class="video-wrapper">
+            <video autoplay muted loop>
+              <!-- <source src="static/img/thevideo.mp4" type="video/mp4" /> -->
+            </video>
+          </div>
+        </div>
+
+        <div class="col col-2">
+          <div class="socials">
+            <div class="sub-col">
+              <p>none</p>
+              <p>9 quo Androe Rockfield</p>
+              <p>69801 Ontario</p>
+              <p>Canada</p>
+              <br />
+              <p>mohamadallosh@hotmail.com</p>
+              <p></p>
+            </div>
+            <div class="sub-col">
+              <p>Instagram</p>
+              <p>LinkedIn</p>
+              <p>Twitter</p>
+              <p>Facebook</p>
+              <br />
+              <p>01 02 030 04 05</p>
+            </div>
+          </div>
+
+          <div class="header">
+            <h1>LARA</h1>
+          </div>
+        </div>
+      </div>
+      <!-- menu -->
+      <ul class="items-left">
+        <li class="menu-button">
+          <div class="menu-toggle closed">
+            <div class="menu-toggle-icon">
+              <div class="hamburger">
+                <div class="menu-bar" data-position="top"></div>
+                <div class="menu-bar" data-position="bottom"></div>
+              </div>
+            </div>
+            <div class="menu-copy"><p>Menu</p></div>
+          </div>
+        </li>
+        <li class="show-item">
+          <a href="perfumes.html">
+            <div class="navigation-item">
+              <div class="shape"></div>
+              <span class="text">Perfumes</span>
+            </div>
+          </a>
+        </li>
+        <li class="show-item">
+          <a href="samples.html">
+            <div class="navigation-item">
+              <div class="shape"></div>
+              <span class="text">samples</span>
+            </div>
+          </a>
+        </li>
+        <li class="show-item">
+          <a href="collections.html">
+            <div class="navigation-item">
+              <div class="shape"></div>
+              <span class="text">collections</span>
+            </div>
+          </a>
+        </li>
+        <li class="show-item">
+          <a href="story.html">
+            <div class="navigation-item">
+              <div class="shape"></div>
+              <span class="text">story</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <ul></ul>
+      <ul class="items-right">
+        <li>
+          <a href="https://lara-perfumes-2.myshopify.com/account/register">
+            <div class="navigation-item">
+              <div class="shape"></div>
+              <span class="text">profile</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#cart">
+            <div class="navigation-item">
+              <div class="shape"></div>
+              <span class="text">cart</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="logo-container">
+      <div class="logo">
+        <a href="index.html" class="logo-link">
+          <h1 class="logo-text">LARA</h1>
+        </a>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="content">
+        <!-- collection section -->
+        <div class="speacial-text-container">
+          <h2 class="special-heading">shine</h2>
+          <p>LARA Project</p>
+        </div>
+
+        <main class="container-product py-8 lg:py-12">
+          <!-- Product Grid -->
+          <div class="product-grid">
+            <!-- Left: Gallery -->
+            <div class="gallery">
+              <!-- Thumbnails -->
+              <div class="thumbnails no-scrollbar">
+                <button class="thumb-btn active">
+                  <img
+                    src="static/img/lara-2.jpeg"
+                    alt="Perfume bottle front view on dark surface"
+                    style="width: 100%; height: 100%; object-fit: cover"
+                  />
+                </button>
+                <button class="thumb-btn">
+                  <img
+                    src="static/img/shine-package.jpeg"
+                    alt="Close up of perfume nozzle and glass details"
+                    style="width: 100%; height: 100%; object-fit: cover"
+                  />
+                </button>
+                <button class="thumb-btn">
+                  <img
+                    src="static/img/shine.jpeg"
+                    alt="Abstract floral pattern with dark lighting"
+                    style="width: 100%; height: 100%; object-fit: cover"
+                  />
+                </button>
+                <button class="thumb-btn">
+                  <img
+                    src="static/img/three.jpeg"
+                    alt="Perfume bottle packaging box luxury texture"
+                    style="width: 100%; height: 100%; object-fit: cover"
+                  />
+                </button>
+              </div>
+
+              <!-- Main Image -->
+              <div class="main-image-wrapper">
+                <img
+                  class="main-image"
+                  src="static/img/lara-2.jpeg"
+                  alt="Elegant perfume bottle with dark lighting and floral accents"
+                />
+                <!-- <div class="badge">Best Seller</div> -->
+              </div>
+            </div>
+
+            <!-- Right: Product Info -->
+            <div style="padding-top: 0.5rem">
+              <!-- Breadcrumbs -->
+              <!-- <nav class="breadcrumbs">
+                <a href="#">Home</a>
+                <span style="color: var(--gray-400)">/</span>
+                <a href="#">Fragrance</a>
+                <span style="color: var(--gray-400)">/</span>
+                <span>Midnight Bloom</span>
+              </nav> -->
+
+              <!-- Title & Price -->
+              <div style="margin-bottom: 1rem">
+                <h1
+                  style="
+                    color: var(--special-color);
+                    font-size: 40px;
+                    font-weight: bold;
+                    line-height: 1.1;
+                    margin-bottom: 12px;
+                  "
+                >
+                  shine
+                </h1>
+                <p
+                  style="
+                    font-size: 18px;
+                    color: var(--gray-500);
+                    font-weight: 500;
+                  "
+                >
+                  LARA
+                </p>
+              </div>
+
+              <!-- Ratings (dynamic) -->
+              <div class="rating-link">
+                <div
+                  id="top-stars"
+                  style="display: flex; color: var(--primary)"
+                ></div>
+
+                <a
+                  id="top-rating-text"
+                  href="#reviews"
+                  style="
+                    font-size: 14px;
+                    font-weight: 600;
+                    text-decoration: underline;
+                    text-decoration-color: #cbd5e1;
+                    text-underline-offset: 4px;
+                  "
+                >
+                  Loading...
+                </a>
+              </div>
+
+              <!-- Price -->
+              <div
+                style="
+                  font-size: 36px;
+                  font-weight: 600;
+                  letter-spacing: 1px;
+                  margin: 1.5rem 0;
+                "
+              >
+                $100<span style="font-size: 18px; font-weight: 400"> CAD</span>
+              </div>
+
+              <!-- Description -->
+              <p
+                style="
+                  font-size: 18px;
+                  line-height: 1.6;
+                  color: var(--special-color);
+                  margin-bottom: 2rem;
+                "
+              >
+                A seductive blend of wild berries and jasmine, grounded by a
+                base of rich amber. Midnight Bloom captures the essence of a
+                moonlit garden, perfect for the evening and lingering long after
+                the sun rises.
+              </p>
+
+              <!-- Size Selector -->
+              <div style="margin-bottom: 2rem">
+                <label
+                  style="
+                    display: block;
+                    font-size: 14px;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    letter-spacing: 0.1em;
+                    margin-bottom: 12px;
+                  "
+                  >Select Size</label
+                >
+                <div class="size-options">
+                  <!-- <label class="size-label">
+                    <input
+                      type="radio"
+                      name="size"
+                      value="30ml"
+                      class="size-radio"
+                    />
+                    <div class="size-box">30ml</div>
+                  </label>
+                  <label class="size-label">
+                    <input
+                      type="radio"
+                      name="size"
+                      value="50ml"
+                      class="size-radio"
+                      checked
+                    />
+                    <div class="size-box">50ml</div>
+                  </label> -->
+                  <label class="size-label">
+                    <input
+                      type="radio"
+                      name="size"
+                      value="100ml"
+                      class="size-radio"
+                      checked
+                    />
+                    <div class="size-box">100ml</div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- CTA -->
+              <div class="cta-buttons">
+                <div
+                  id="product-component-1767967878977"
+                  class="buy_button_shoppify"
+                ></div>
+                <button class="favorite-btn">
+                  <span
+                    class="material-symbols-outlined"
+                    style="font-size: 24px"
+                    >favorite</span
+                  >
+                </button>
+              </div>
+
+              <!-- Accordions -->
+              <div style="border-top: 1px solid var(--gray-200)">
+                <details open>
+                  <summary>
+                    <span>Fragrance Notes</span>
+                    <span class="material-symbols-outlined expand-icon"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    style="
+                      margin-top: 1rem;
+                      font-size: 14px;
+                      line-height: 1.6;
+                      color: var(--special-color);
+                    "
+                  >
+                    <div class="notes-grid">
+                      <span style="color: var(--gray-400)">Top</span>
+                      <span>Black Currant, Wild Berries</span>
+                      <span style="color: var(--gray-400)">Heart</span>
+                      <span>Jasmine, White Rose</span>
+                      <span style="color: var(--gray-400)">Base</span>
+                      <span>Rich Amber, Musk, Vanilla</span>
+                    </div>
+                  </div>
+                </details>
+
+                <details>
+                  <summary>
+                    <span>Ingredients</span>
+                    <span class="material-symbols-outlined expand-icon"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    style="
+                      margin-top: 1rem;
+                      font-size: 14px;
+                      line-height: 1.6;
+                      color: var(--special-color);
+                    "
+                  >
+                    Alcohol Denat., Parfum (Fragrance), Aqua (Water), Benzyl
+                    Salicylate, Limonene, Linalool, Hydroxycitronellal,
+                    Geraniol, Hexyl Cinnamal, Coumarin, Alpha-Isomethyl Ionone,
+                    Citronellol.
+                  </div>
+                </details>
+
+                <details>
+                  <summary>
+                    <span>Shipping & Returns</span>
+                    <span class="material-symbols-outlined expand-icon"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    style="
+                      margin-top: 1rem;
+                      font-size: 14px;
+                      line-height: 1.6;
+                      color: var(--special-color);
+                    "
+                  >
+                    Free shipping on orders over $50. Returns accepted within 30
+                    days of purchase.
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reviews Section -->
+          <div class="reviews-section" id="reviews">
+            <h3 style="font-size: 23px; font-weight: bold; margin-bottom: 1rem">
+              Ratings & Reviews
+            </h3>
+            <p class="review-note" style="margin-bottom: 1rem; opacity: 0.8">
+              *Reviews are from verified purchasers only to ensure authenticity
+              and trustworthiness.
+            </p>
+            <p class="review-note" style="margin-bottom: 1rem; opacity: 0.8">
+              *once you recieve the product you will be able to leave a review.
+            </p>
+
+            <div class="reviews-grid">
+              <!-- Summary (left column) -->
+              <div>
+                <div class="summary-box" id="review-summary">
+                  <div
+                    style="
+                      display: flex;
+                      align-items: flex-end;
+                      gap: 12px;
+                      margin-bottom: 1.5rem;
+                    "
+                  >
+                    <span
+                      id="avg-rating"
+                      style="font-size: 72px; font-weight: 900"
+                      >—</span
+                    >
+                    <div>
+                      <div
+                        id="avg-stars"
+                        style="
+                          display: flex;
+                          color: var(--primary);
+                          margin-bottom: 4px;
+                        "
+                      ></div>
+                      <span
+                        id="review-count-text"
+                        style="font-size: 14px; color: var(--gray-500)"
+                      >
+                        Loading reviews...
+                      </span>
+                    </div>
+                  </div>
+
+                  <div
+                    id="rating-bars"
+                    style="display: flex; flex-direction: column; gap: 12px"
+                  >
+                    <!-- Bars will be injected here -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Reviews list (right column) -->
+              <div
+                id="reviews-list"
+                style="
+                  flex: 1;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 1.5rem;
+                "
+              >
+                <!-- Reviews will be inserted here -->
+              </div>
+
+              <div
+                id="reviews-controls"
+                style="margin-top: 2rem; text-align: center; display: none"
+              >
+                <button id="see-more-reviews" class="see-more-btn">
+                  See more reviews
+                  <span
+                    class="material-symbols-outlined"
+                    style="font-size: 20px; vertical-align: middle"
+                    >expand_more</span
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <!-- <div class="speacial-text-container">
+          <h2 class="special-heading">samples</h2>
+          <p>samples</p>
+        </div> -->
+        <!-- <main class="page-bestseller section2">
+          <section class="hero-bestseller" aria-label="Hero product image">
+         
+            <a href="#">
+              <img
+                class="big-img-bestseller"
+                src="/assets/images/collection1.jpeg"
+                alt="Perfume hero"
+              />
+            </a>
+          </section>
+        </main> -->
+
+        <footer class="footer">
+          <div class="container-about">
+            <!-- Header Section -->
+            <div class="speacial-text-container">
+              <h2 class="special-heading about">Connect With Us</h2>
+              <p>Stay in touch and explore more</p>
+            </div>
+
+            <!-- Footer Content -->
+            <div class="footer-content">
+              <!-- Quick Links -->
+              <div class="footer-section quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                  <li>
+                    <a href="#home" class="navigation-item">
+                      <span class="shape"></span>
+                      <span class="text">Home</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#products" class="navigation-item">
+                      <span class="shape"></span>
+                      <span class="text">Products</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#about" class="navigation-item">
+                      <span class="shape"></span>
+                      <span class="text">About</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#contact" class="navigation-item">
+                      <span class="shape"></span>
+                      <span class="text">Contact</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Social Media -->
+              <div class="footer-section socials">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                  <a
+                    href="https://twitter.com"
+                    target="_blank"
+                    class="navigation-item"
+                  >
+                    <span class="shape"></span>
+                    <span class="text">Twitter</span>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/lara.perfum/?utm_source=qr&igsh=eWw1NWE1d2p5NG5r#"
+                    target="_blank"
+                    class="navigation-item"
+                  >
+                    <span class="shape"></span>
+                    <span class="text">Instagram</span>
+                  </a>
+                  <a
+                    href="https://linkedin.com"
+                    target="_blank"
+                    class="navigation-item"
+                  >
+                    <span class="shape"></span>
+                    <span class="text">LinkedIn</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Contact Info -->
+              <div class="footer-section contact-info">
+                <h3>Contact</h3>
+                <p>
+                  Email:
+                  <a href="mailto:mohamadallosh@hotmail.com"
+                    >mohamadallosh@hotmail.com</a
+                  >
+                </p>
+                <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                <p>Calgary, Canada | Online Store</p>
+              </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom">
+              <p>&copy; 2025 Your Brand. All rights reserved.</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Side Cart -->
+    <div
+      id="sideCart"
+      class="side-cart"
+      style="
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 24rem;
+        background: #fff;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
+      "
+    >
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 15px;
+          border-bottom: 1px solid #ccc;
+        "
+      >
+        <h2 style="font-size: 1.5rem; font-weight: 600">Your Cart</h2>
+        <button
+          id="closeCart"
+          style="
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+          "
+        >
+          <span class="material-symbols-outlined">x</span>
+        </button>
+      </div>
+
+      <div id="cartItems" style="flex: 1; overflow-y: auto; padding: 15px">
+        <!-- Cart items will be injected here -->
+        <p style="color: #777">Your cart is empty.</p>
+      </div>
+
+      <div style="padding: 15px; border-top: 1px solid #ccc">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+          "
+        >
+          <span style="font-weight: 600">Subtotal</span>
+          <span id="cartSubtotal">$0.00</span>
+        </div>
+        <button
+          style="
+            width: 100%;
+            background: #d97706;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+          "
+        >
+          View Cart
+        </button>
+        <button
+          style="
+            width: 100%;
+            background: #fff;
+            color: #333;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+          "
+        >
+          Checkout
+        </button>
+      </div>
+    </div>
+
+    <!-- Overlay when cart is open -->
+    <div
+      id="cartOverlay"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        z-index: 999;
+      "
+    ></div>
+
+    <!-- ==================== QUICK VIEW MODAL (Pure HTML + CSS) ==================== -->
+    <div id="quickViewModal" class="qv-modal">
+      <div id="quickViewContent" class="qv-content">
+        <!-- LEFT: Product Image -->
+        <div class="qv-image-container">
+          <img id="modalImage" src="" alt="Perfume" class="qv-image" />
+        </div>
+
+        <!-- RIGHT: Product Details -->
+        <div class="qv-details">
+          <button onclick="closeQuickView()" class="qv-close-btn">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+
+          <div class="qv-details-inner">
+            <!-- Title -->
+            <div class="qv-title-section">
+              <h3 id="modalTitle" class="qv-title"></h3>
+              <p class="qv-subtitle">100 ml</p>
+            </div>
+
+            <!-- Stock & Sales -->
+            <div class="qv-status">
+              <span class="qv-in-stock">
+                <span class="material-symbols-outlined">check_circle</span>
+                In Stock
+              </span>
+              <!-- <span class="qv-sold">
+                <span class="material-symbols-outlined"
+                  >local_fire_department</span
+                >
+                <span id="modalSold">63143</span> sold
+              </span> -->
+            </div>
+
+            <!-- Reviews Section -->
+            <div class="qv-reviews-section">
+              <div class="qv-overall-rating">
+                <span class="qv-stars">★★★★★</span>
+                <span class="qv-review-count">(14 reviews)</span>
+              </div>
+
+              <div class="qv-customer-reviews">
+                <!-- <div class="qv-review-item">
+                  <div class="qv-review-header">
+                    <span class="qv-review-name">Sarah M.</span>
+                    <span class="qv-stars-sm">★★★★★</span>
+                  </div>
+                  <p class="qv-review-text">
+                    This perfume is awesome! Long-lasting and gets compliments
+                    everywhere I go.
+                  </p>
+                </div>
+
+                <div class="qv-review-item">
+                  <div class="qv-review-header">
+                    <span class="qv-review-name">Ahmed K.</span>
+                    <span class="qv-stars-sm">★★★★☆</span>
+                  </div>
+                  <p class="qv-review-text">
+                    Rich tobacco scent with a luxurious feel. Perfect for
+                    evening wear.
+                  </p>
+                </div> -->
+
+                <div class="qv-review-item">
+                  <div class="qv-review-header">
+                    <span class="qv-review-name">Lina R.</span>
+                    <span class="qv-stars-sm">★★★★★</span>
+                  </div>
+                  <p class="qv-review-text">
+                    Obsessed! Smells expensive and unique. Already bought two
+                    bottles.
+                  </p>
+                </div>
+              </div>
+
+              <!-- <button class="qv-view-all-reviews">
+                View all 214 reviews
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </button> -->
+            </div>
+
+            <!-- Price -->
+            <div class="qv-price">
+              <span id="modalDiscountPrice" class="qv-old-price"></span>
+              <span id="modalPrice" class="qv-new-price">$50</span>
+            </div>
+
+            <!-- Try-on Text -->
+            <div class="qv-try-on">
+              <p>Try it on your skin and choose the best option for you</p>
+            </div>
+
+            <!-- Size Selector -->
+            <!-- <div class="qv-size">
+              <label class="qv-size-option">
+                <input type="radio" name="size" checked />
+                <span class="qv-size-label">200 ml – Full Bottle</span>
+              </label>
+              <div class="qv-size-pricing">
+                <span class="qv-strike">$275</span>
+                <span class="qv-bold">$125</span>
+              </div>
+            </div> -->
+
+            <!-- Action Buttons -->
+            <div class="qv-actions">
+              <button class="qv-add-to-cart">
+                <span class="material-symbols-outlined">shopping_bag</span>
+                Add to Cart
+              </button>
+              <button class="qv-buy-now">Buy Now</button>
+            </div>
+
+            <!-- Related Products -->
+            <!-- <div class="qv-related">
+              <p class="qv-related-title">You may also like</p>
+              <div class="qv-related-items">
+                <div class="qv-related-item">
+                  <img
+                    src="static/img/sample1.jpg"
+                    alt="Wild Colt"
+                    class="qv-related-img"
+                  />
+                  <p class="qv-related-name">Wild Colt</p>
+                  <p class="qv-related-price">$129</p>
+                </div>
+                <div class="qv-related-item">
+                  <img
+                    src="static/img/sample2.jpg"
+                    alt="Crown Spirit"
+                    class="qv-related-img"
+                  />
+                  <p class="qv-related-name">Crown Spirit</p>
+                  <p class="qv-related-price">$95</p>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Toast Notification (Top-Left) -->
+    <div id="authToast" class="auth-toast">
+      <span class="material-symbols-outlined">warning</span>
+      <span
+        >Please
+        <a
+          href="sign_in.html"
+          style="color: #d97706; text-decoration: underline"
+          >sign in</a
+        >
+        to add favorites.</span
+      >
+    </div>
+    <script type="text/javascript">
+      /*<![CDATA[*/
+      (function () {
+        var scriptURL =
+          "https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js";
+        if (window.ShopifyBuy) {
+          if (window.ShopifyBuy.UI) {
+            ShopifyBuyInit();
+          } else {
+            loadScript();
+          }
+        } else {
+          loadScript();
+        }
+        function loadScript() {
+          var script = document.createElement("script");
+          script.async = true;
+          script.src = scriptURL;
+          (
+            document.getElementsByTagName("head")[0] ||
+            document.getElementsByTagName("body")[0]
+          ).appendChild(script);
+          script.onload = ShopifyBuyInit;
+        }
+        function ShopifyBuyInit() {
+          var client = ShopifyBuy.buildClient({
+            domain: "ydmggt-mr.myshopify.com",
+            storefrontAccessToken: "9d3f54a067ce1ef505736f5ad45131fc",
+          });
+          ShopifyBuy.UI.onReady(client).then(function (ui) {
+            ui.createComponent("product", {
+              id: "8156918710387",
+              node: document.getElementById("product-component-1767967878977"),
+              moneyFormat: "%24%7B%7Bamount%7D%7D",
+              options: {
+                product: {
+                  styles: {
+                    product: {
+                      "@media (min-width: 601px)": {
+                        "max-width": "calc(25% - 20px)",
+                        "margin-left": "20px",
+                        "margin-bottom": "50px",
+                      },
+                    },
+                    button: {
+                      "font-family": "Geneva, sans-serif",
+                      "font-size": "15px",
+                      "font-weight": "600",
+
+                      /* SIZE */
+                      "padding-top": "12px",
+                      "padding-bottom": "12px",
+                      "padding-left": "28px",
+                      "padding-right": "28px",
+                      "min-height": "46px",
+                      "min-width": "220px", // makes it wide like the image
+
+                      /* SHAPE */
+                      "border-radius": "999px", // pill shape
+
+                      "background-color": "#8b0000",
+                      color: "#fff",
+                      "text-decoration": "none",
+                      "white-space": "nowrap",
+                      overflow: "visible",
+                      "text-overflow": "clip",
+
+                      transition: "background 0.2s ease, transform 0.15s ease",
+
+                      ":hover": {
+                        "background-color": "#660000",
+                      },
+                      ":focus": {
+                        "background-color": "#660000",
+                      },
+                    },
+                    quantityInput: {
+                      "font-size": "13px",
+                      "padding-top": "14.5px",
+                      "padding-bottom": "14.5px",
+                    },
+                  },
+                  contents: {
+                    img: false,
+                    title: false,
+                    price: false,
+                  },
+                  text: {
+                    button: "Add to cart",
+                  },
+                },
+                productSet: {
+                  styles: {
+                    products: {
+                      "@media (min-width: 601px)": {
+                        "margin-left": "-20px",
+                      },
+                    },
+                  },
+                },
+                modalProduct: {
+                  contents: {
+                    img: false,
+                    imgWithCarousel: true,
+                    button: false,
+                    buttonWithQuantity: true,
+                  },
+                  styles: {
+                    product: {
+                      "@media (min-width: 601px)": {
+                        "max-width": "100%",
+                        "margin-left": "0px",
+                        "margin-bottom": "0px",
+                      },
+                    },
+                    button: {
+                      "font-family": "Geneva, sans-serif",
+                      "font-size": "15px",
+                      "font-weight": "600",
+
+                      /* SIZE */
+                      "padding-top": "12px",
+                      "padding-bottom": "12px",
+                      "padding-left": "28px",
+                      "padding-right": "28px",
+                      "min-height": "46px",
+                      "min-width": "220px", // makes it wide like the image
+
+                      /* SHAPE */
+                      "border-radius": "999px", // pill shape
+
+                      "background-color": "#8b0000",
+                      color: "#fff",
+                      "text-decoration": "none",
+                      "white-space": "nowrap",
+                      overflow: "visible",
+                      "text-overflow": "clip",
+
+                      transition: "background 0.2s ease, transform 0.15s ease",
+
+                      ":hover": {
+                        "background-color": "#660000",
+                      },
+                      ":focus": {
+                        "background-color": "#660000",
+                      },
+                    },
+                    quantityInput: {
+                      "font-size": "13px",
+                      "padding-top": "14.5px",
+                      "padding-bottom": "14.5px",
+                    },
+                  },
+                  text: {
+                    button: "Add to cart",
+                  },
+                },
+                option: {},
+                cart: {
+                  styles: {
+                    button: {
+                      "font-size": "13px",
+                      "padding-top": "14.5px",
+                      "padding-bottom": "14.5px",
+                      ":hover": {
+                        "background-color": "#000000",
+                      },
+                      "background-color": "#000000",
+                      ":focus": {
+                        "background-color": "#000000",
+                      },
+                      "border-radius": "40px",
+                    },
+                  },
+                  text: {
+                    total: "Subtotal",
+                    button: "Checkout",
+                  },
+                  contents: {
+                    note: true,
+                  },
+                  popup: false,
+                },
+                toggle: {
+                  styles: {
+                    toggle: {
+                      "background-color": "#000000",
+                      ":hover": {
+                        "background-color": "#000000",
+                      },
+                      ":focus": {
+                        "background-color": "#000000",
+                      },
+                    },
+                    count: {
+                      "font-size": "13px",
+                    },
+                  },
+                },
+              },
+            });
+          });
+        }
+      })();
+      /*]]>*/
+    </script>
+    <script>
+      // Simple thumbnail switching
+      const thumbs = document.querySelectorAll(".thumb-btn");
+      const mainImg = document.querySelector(".main-image");
+
+      thumbs.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          thumbs.forEach((t) => t.classList.remove("active"));
+          btn.classList.add("active");
+          mainImg.src = btn.querySelector("img").src;
+        });
+      });
+    </script>
+    <!-- Firebase App (core) + Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+
+    <script>
+      // Firebase Config
+      const firebaseConfig = {
+        apiKey: "AIzaSyCJ2OWTPNbsHmHxMK5W7HQ0CqWm62Z-YQs",
+        authDomain: "lara-76102.firebaseapp.com",
+        projectId: "lara-76102",
+        storageBucket: "lara-76102.firebasestorage.app",
+        messagingSenderId: "628256871308",
+        appId: "1:628256871308:web:c7f854921a683a3f72bca9",
+        measurementId: "G-XKFL5M40TH",
+      };
+
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+
+      const PRODUCT_ID = "shine";
+
+      // ── Load & render reviews ───────────────────────────────────────
+      // Global state
+      let allReviews = [];
+      let visibleCount = 2; // start with 2
+      const increment = 5; // load +5 each click
+      let isLoading = false;
+
+      async function loadReviews() {
+        try {
+          const col = db.collection(`reviews/${PRODUCT_ID}/reviews`);
+          const snap = await col.orderBy("createdAt", "desc").get();
+
+          if (snap.empty) {
+            document.getElementById("reviews-list").innerHTML =
+              `<p style="text-align:center;padding:3rem 0;color:#888">No reviews yet. Be the first!</p>`;
+            document.getElementById("review-count-text").textContent =
+              "0 reviews";
+            document.getElementById("reviews-controls").style.display = "none";
+            return;
+          }
+
+          // ── Calculate stats ─────────────────────────────────────
+          let total = 0;
+          const counts = [0, 0, 0, 0, 0, 0]; // index 0 unused, 1–5 stars
+
+          allReviews = [];
+          snap.forEach((doc) => {
+            const d = doc.data();
+            const rating = Number(d.rating) || 0;
+            total += rating;
+            if (rating >= 1 && rating <= 5) counts[Math.floor(rating)]++;
+            allReviews.push({ ...d, id: doc.id });
+          });
+
+          const count = allReviews.length;
+          const avg = count ? (total / count).toFixed(1) : "0.0";
+          // ── Update TOP rating link (stars + text) ─────────────
+          renderStarsInline("top-stars", Number(avg), 18);
+          document.getElementById("top-rating-text").textContent =
+            `${avg} (${count} Reviews)`;
+
+          // Update summary
+          document.getElementById("avg-rating").textContent = avg;
+          renderStars("avg-stars", Number(avg), 20);
+          document.getElementById("review-count-text").textContent =
+            `${avg} (${count} reviews)`;
+
+          // Rating distribution bars
+          renderRatingBars(counts, count);
+
+          // Show controls if we have more than initial visible count
+          document.getElementById("reviews-controls").style.display =
+            allReviews.length > visibleCount ? "block" : "none";
+
+          // Render only the visible slice
+          renderVisibleReviews();
+        } catch (err) {
+          console.error("Reviews error:", err);
+          document.getElementById("reviews-list").innerHTML =
+            `<p style="color:#f87171;text-align:center;padding:3rem 0">Could not load reviews</p>`;
+        }
+      }
+
+      // Helper: render stars
+      function renderStars(containerId, rating, size = 18) {
+        const container = document.getElementById(containerId);
+        container.innerHTML = "";
+        const full = Math.floor(rating);
+        const half = rating % 1 >= 0.5;
+        for (let i = 0; i < full; i++) {
+          container.innerHTML += `<span class="material-symbols-outlined filled" style="font-size:${size}px">star</span>`;
+        }
+        if (half) {
+          container.innerHTML += `<span class="material-symbols-outlined filled" style="font-size:${size}px">star_half</span>`;
+        }
+        for (let i = full + (half ? 1 : 0); i < 5; i++) {
+          container.innerHTML += `<span class="material-symbols-outlined" style="font-size:${size}px;color:#555">star</span>`;
+        }
+      }
+
+      // Helper: rating distribution bars
+      function renderRatingBars(counts, total) {
+        const bars = document.getElementById("rating-bars");
+        bars.innerHTML = "";
+        for (let i = 5; i >= 1; i--) {
+          const pct = total ? Math.round((counts[i] / total) * 100) : 0;
+          bars.innerHTML += `
+      <div style="display:flex;align-items:center;gap:16px;font-size:14px;">
+        <span style="width:12px;font-weight:bold;color:#aaa">${i}</span>
+        <div style="flex:1;height:10px;background:#333;border-radius:5px;overflow:hidden;">
+          <div style="height:100%;width:${pct}%;background:var(--special-color);transition:width 0.5s;"></div>
+        </div>
+        <span style="width:36px;text-align:right;color:#f9a8d4">${pct}%</span>
+      </div>`;
+        }
+      }
+
+      // Render only currently visible reviews
+      function renderVisibleReviews() {
+        const list = document.getElementById("reviews-list");
+        list.innerHTML = "";
+
+        const visibleReviews = allReviews.slice(0, visibleCount);
+
+        if (visibleReviews.length === 0) {
+          list.innerHTML = `<p style="text-align:center;padding:2rem 0;color:#888">No reviews to show</p>`;
+          return;
+        }
+
+        visibleReviews.forEach((r) => {
+          const date = r.createdAt
+            ? new Date(r.createdAt.toDate()).toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              })
+            : "—";
+
+          const stars =
+            "★".repeat(Math.floor(r.rating || 0)) +
+            (r.rating % 1 >= 0.5 ? "½" : "") +
+            "☆".repeat(5 - Math.ceil(r.rating || 0));
+
+          list.innerHTML += `
+      <div class="review-card" style="padding:1.2rem;background:rgba(255,255,255,0.05);border-radius:8px;">
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.8rem;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:var(--special-color);color:white;display:flex;align-items:center;justify-content:center;font-weight:bold;">
+              ${(r.authorName || "?")[0].toUpperCase()}
+            </div>
+            <div>
+              <div style="font-weight:600;">${r.authorName || "Anonymous"}</div>
+              ${
+                r.verified
+                  ? '<small style="color:#4ade80">Verified Buyer</small>'
+                  : ""
+              }
+            </div>
+          </div>
+          <small style="color:#888">${date}</small>
+        </div>
+        <div style="color:#f5c518;margin-bottom:0.6rem;">${stars}</div>
+        <div style="font-weight:600;margin-bottom:0.4rem">${r.title || ""}</div>
+        <p style="color:#ddd;line-height:1.5">${r.comment || ""}</p>
+      </div>`;
+        });
+
+        // Update button state
+        const btn = document.getElementById("see-more-reviews");
+        if (visibleCount >= allReviews.length) {
+          btn.disabled = true;
+          btn.textContent = "No more reviews";
+        } else {
+          btn.disabled = false;
+          btn.innerHTML = `See more reviews <span class="material-symbols-outlined" style="font-size:20px;vertical-align:middle;">expand_more</span>`;
+        }
+      }
+
+      // ── See more button handler ────────────────────────────────
+      document.addEventListener("click", (e) => {
+        if (
+          e.target.id === "see-more-reviews" ||
+          e.target.closest("#see-more-reviews")
+        ) {
+          if (isLoading) return;
+          visibleCount += increment;
+          renderVisibleReviews();
+        }
+      });
+
+      // Real-time listener + initial load
+      let unsubscribe = null;
+      function listenToReviews() {
+        if (unsubscribe) unsubscribe();
+        unsubscribe = db
+          .collection(`reviews/${PRODUCT_ID}/reviews`)
+          .orderBy("createdAt", "desc")
+          .onSnapshot(() => {
+            loadReviews(); // will re-fetch all and re-render visible slice
+          });
+      }
+      // Submit new review
+      document
+        .getElementById("reviewForm")
+        ?.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const btn = document.getElementById("submitReviewBtn");
+          const msg = document.getElementById("formMessage");
+          btn.disabled = true;
+          msg.textContent = "Submitting...";
+
+          try {
+            const rating = document.querySelector(
+              'input[name="rating"]:checked',
+            )?.value;
+            if (!rating) throw new Error("Please select stars");
+
+            const title = document.getElementById("reviewTitle").value.trim();
+            const comment = document
+              .getElementById("reviewComment")
+              .value.trim();
+            const name =
+              document.getElementById("reviewName").value.trim() || "Anonymous";
+
+            if (comment.length < 10) throw new Error("Review too short");
+
+            await db.collection(`reviews/${PRODUCT_ID}/reviews`).add({
+              rating: Number(rating),
+              title,
+              comment,
+              authorName: name,
+              createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+              verified: false,
+            });
+
+            msg.style.color = "lime";
+            msg.textContent = "Review submitted!";
+            e.target.reset();
+          } catch (err) {
+            msg.style.color = "tomato";
+            msg.textContent = err.message || "Failed to submit";
+            console.error(err);
+          } finally {
+            btn.disabled = false;
+          }
+        });
+      // Start
+      document.addEventListener("DOMContentLoaded", () => {
+        loadReviews();
+        listenToReviews();
+      });
+      function renderStarsInline(containerId, rating, size = 18) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+
+        container.innerHTML = "";
+        const full = Math.floor(rating);
+        const half = rating % 1 >= 0.5;
+
+        for (let i = 0; i < full; i++) {
+          container.innerHTML += `<span class="material-symbols-outlined filled" style="font-size:${size}px">star</span>`;
+        }
+
+        if (half) {
+          container.innerHTML += `<span class="material-symbols-outlined filled" style="font-size:${size}px">star_half</span>`;
+        }
+
+        for (let i = full + (half ? 1 : 0); i < 5; i++) {
+          container.innerHTML += `<span class="material-symbols-outlined" style="font-size:${size}px;color:#555">star</span>`;
+        }
+      }
+    </script>
+    <script src="static/js/shopify_products.js"></script>
+    <script src="static/js/main.js"></script>
+  </body>
+</html>

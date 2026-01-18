@@ -1,0 +1,16 @@
+.star-rating-input {
+  direction: rtl; /* important trick */
+  display: inline-block;
+}
+
+.star-rating-input label {
+  color: #444;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.star-rating-input input[type="radio"]:checked ~ label,
+.star-rating-input label:hover,
+.star-rating-input label:hover ~ label {
+  color: #f5c518; /* gold / yellow */
+}

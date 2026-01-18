@@ -1,0 +1,1327 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="codegrid" />
+    <title>Lara perfumes</title>
+    <!-- Google Fonts for Material Symbols -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <style>
+      .second-screen {
+        display: block !important;
+      }
+      .page-bestseller {
+        display: block;
+      }
+      .content {
+        min-height: calc(100vh - 100px) !important;
+        height: auto !important;
+        padding: 0 0 60px !important;
+        top: -100px;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .nav {
+        top: 0 !important;
+      }
+
+      .container-product {
+        background: #fff8f3 !important;
+      }
+      .speacial-text-container {
+        top: 100px;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/CustomEase.min.js"></script>
+    <link rel="stylesheet" href="static/css/master.css" />
+    <link rel="stylesheet" href="static/css/product.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.20/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <!-- <script src="main.js"></script> -->
+  </head>
+  <body>
+    <div class="section-indicator">
+      <span class="section-text">hero-01</span>
+    </div>
+    <nav class="nav">
+      <!-- menu -->
+
+      <!-- <div class="menu-toggle closed">
+        <div class="menu-toggle-icon">
+          <div class="hamburger">
+            <div class="menu-bar" data-position="top"></div>
+            <div class="menu-bar" data-position="bottom"></div>
+          </div>
+        </div>
+        <div class="menu-copy"><p>Menu</p></div>
+      </div> -->
+
+      <!-- <div class="menu-toggle closed">
+        <div class="menu-toggle-icon">
+          <div class="hamburger">
+            <div class="menu-bar" data-position="top"></div>
+            <div class="menu-bar" data-position="bottom"></div>
+          </div>
+        </div>
+        <div class="menu-copy"><p>Menu</p></div>
+      </div> -->
+
+      <div class="menu">
+        <div class="col col-1">
+          <!-- <div class="menu-logo"><a href="#">LARA</a></div> -->
+          <div class="links">
+            <div class="link">
+              <a href="perfumes.html">Perfumes</a>
+            </div>
+            <div class="link">
+              <a href="samples.html">samples</a>
+            </div>
+            <div class="link">
+              <a href="collections.html">collections</a>
+            </div>
+            <div class="link"><a href="story.html">story</a></div>
+          </div>
+          <div class="video-wrapper">
+            <video autoplay muted loop>
+              <!-- <source src="static/img/thevideo.mp4" type="video/mp4" /> -->
+            </video>
+          </div>
+        </div>
+
+        <div class="col col-2">
+          <div class="socials">
+            <div class="sub-col">
+              <p>none</p>
+              <p>9 quo Androe Rockfield</p>
+              <p>69801 Ontario</p>
+              <p>Canada</p>
+              <br />
+              <p>mohamadallosh@hotmail.com</p>
+              <p></p>
+            </div>
+            <div class="sub-col">
+              <p>Instagram</p>
+              <p>LinkedIn</p>
+              <p>Twitter</p>
+              <p>Facebook</p>
+              <br />
+              <p>01 02 030 04 05</p>
+            </div>
+          </div>
+
+          <div class="header">
+            <h1>LARA</h1>
+          </div>
+        </div>
+      </div>
+      <!-- menu -->
+      <ul class="items-left">
+        <li class="menu-button">
+          <div class="menu-toggle closed">
+            <div class="menu-toggle-icon">
+              <div class="hamburger">
+                <div class="menu-bar" data-position="top"></div>
+                <div class="menu-bar" data-position="bottom"></div>
+              </div>
+            </div>
+            <div class="menu-copy"><p>Menu</p></div>
+          </div>
+        </li>
+        <li class="show-item">
+          <a href="perfumes.html">
+            <div class="navigation-item">
+              <div class="shape"></div>
+              <span class="text">Perfumes</span>
+            </div>
+          </a>
+        </li>
+        <li class="show-item">
+          <a href="samples.html">
+            <div class="navigation-item">
+              <div class="shape"></div>
+              <span class="text">samples</span>
+            </div>
+          </a>
+        </li>
+        <li class="show-item">
+          <a href="collections.html">
+            <div class="navigation-item">
+              <div class="shape"></div>
+              <span class="text">collections</span>
+            </div>
+          </a>
+        </li>
+        <li class="show-item">
+          <a href="story.html">
+            <div class="navigation-item">
+              <div class="shape"></div>
+              <span class="text">story</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <ul></ul>
+      <ul class="items-right">
+        <li>
+          <a href="https://lara-perfumes-2.myshopify.com/account/register">
+            <div class="navigation-item">
+              <div class="shape"></div>
+              <span class="text">profile</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#cart">
+            <div class="navigation-item">
+              <div class="shape"></div>
+              <span class="text">cart</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="logo-container">
+      <div class="logo">
+        <a href="index.html" class="logo-link">
+          <h1 class="logo-text">LARA</h1>
+        </a>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="content">
+        <!-- <div class="hero-image">
+          <img src="static/img/two.jpeg" alt="Hero Image" />
+          <img src="static/img/one.jpeg" alt="Hero Image" />
+          <img src="static/img/17.jpg" alt="Hero Image" />
+          <img src="static/img/10.jpg" alt="Hero Image" />
+          <img src="static/img/13.jpg" alt="Hero Image" />
+          <img src="static/img/11.jpg" alt="Hero Image" />
+          <img src="static/img/16.jpg" alt="Hero Image" />
+          <img src="static/img/12.jpg" alt="Hero Image" />
+          <img src="static/img/one.jpeg" alt="Hero Image" />
+          <img src="static/img/15.jpg" alt="Hero Image" />
+          <img src="static/img/three.jpeg" alt="Hero Image" />
+          <img src="static/img/14.jpg" alt="Hero Image" />
+          <img src="static/img/naseem-package.jpeg" alt="Hero Image" />
+          <img src="static/img/one.jpeg" alt="Hero Image" />
+          <img src="static/img/two.jpeg" alt="Hero Image" />
+        </div> -->
+
+        <!-- collection section -->
+        <div class="speacial-text-container">
+          <h2 class="special-heading">collections</h2>
+          <p>LARA Project</p>
+        </div>
+
+        <!-- <div class="speacial-text-container">
+          <h2 class="special-heading">samples</h2>
+          <p>samples</p>
+        </div> -->
+        <!-- <main class="page-bestseller section2">
+          <section class="hero-bestseller" aria-label="Hero product image">
+         
+            <a href="#">
+              <img
+                class="big-img-bestseller"
+                src="/assets/images/collection1.jpeg"
+                alt="Perfume hero"
+              />
+            </a>
+          </section>
+        </main> -->
+        <!-- collection section -->
+        <!-- <div class="speacial-text-container second-screen">
+          <h2 class="special-heading">collections</h2>
+          <p>LARA Project</p>
+        </div> -->
+
+        <main class="container-product py-8 lg:py-12">
+          <!-- Product Grid -->
+          <div class="product-grid">
+            <!-- Left: Gallery -->
+            <div class="gallery">
+              <!-- Thumbnails -->
+              <div class="thumbnails no-scrollbar">
+                <button class="thumb-btn active">
+                  <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYTRnNap5zsAdnB1EJqLyACVLvIrTVfHK7N5s6PVBlTcP28Mry8b-qgPmB9tW9wEGup3TDJvGIyo0Uih0GwL7Df2Tgb-gXvLEgjDc8g_cE4tj77ULnv1beOHegtTijcz3-PwTUtbzYlCxqF_czRf0cTSP6mvcZpyAqcI0nqNBHnHFVoJ0OBdyQlfjdBrfIWBYCYCbW2TUcuKllbqO3uquiVUQq0u_0IRSeZ2KI5bngd8gfTw7W-R80Zp-f1GAEig4UHjCnBkO_L3iR"
+                    alt="Perfume bottle front view on dark surface"
+                    style="width: 100%; height: 100%; object-fit: cover"
+                  />
+                </button>
+                <button class="thumb-btn">
+                  <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOhi2UWq-0a3TWWffZ39v6TZZRPRWtmg6mEGqs0eTpiB3Ya2x74CMVwATFgkn0RTBM2L6LqVgG-bC-PG8ujeLLMJ-XeHFih7uBkRFFWGGZM3n7sPtay6LMpFVmTOgd32JRPae1z50ipeOn2xBqyps66oKCmP11C1sAxARf0ehZVJhNqR0kyjVTdSKSAN0ywvkLWt1FvBhHF3qD6XIhp3S84u74tpTeiDUd968eq5T1UduflJZLERjkH9GWMmP6xXynYdDcML-fwaxt"
+                    alt="Close up of perfume nozzle and glass details"
+                    style="width: 100%; height: 100%; object-fit: cover"
+                  />
+                </button>
+                <button class="thumb-btn">
+                  <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6K3gXq56d0i4D0Uon3WCoNfuNfX-D6MUAkbZenuHPqjxeEjV2fESn5__0LRmjgUhzMqbC8CxF6lpI01tkfokAPOuE891E2Xjsy7Z8u56eGVmUCX7MsOYU21GYMWLuSO5jV9fId9PkX7e6MqoK8nMvDtmzawEA7hFFfxaarhdk2azrCitjPJECpqOSTM0xys1eYnxiLWrW2KHCXUj6P6-mUV2XuJIENS12LPhWEFInu-fQ9OXPkzU9o1etXkP3JNedgRk5oSVBCS7-"
+                    alt="Abstract floral pattern with dark lighting"
+                    style="width: 100%; height: 100%; object-fit: cover"
+                  />
+                </button>
+                <button class="thumb-btn">
+                  <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbYFQfVxrPSR4Wk-pMuQ6kR7Zg_kNXEJqQCNUkTJ0kaSWqQ0cdof1D9G5XFyU5AeJv42vztpJr113IWFNuX1c2KvwZ6zRad0f3a7m4Mkvi2PpVxc43MxvARFA9d6NFwWxoAXAs03vvGfgXXKBZzfEwegWL9kbmVkrksYvRh1fREXQrjGghsHV-4mWRzfIz8E5ejjMTwUqsU_j1VfsPUsRACoXaipOiUc_TS2GDnM7eWvuXEFAguagCGtMmwkuaZZGp8hWrV8Bz8Uwo"
+                    alt="Perfume bottle packaging box luxury texture"
+                    style="width: 100%; height: 100%; object-fit: cover"
+                  />
+                </button>
+              </div>
+
+              <!-- Main Image -->
+              <div class="main-image-wrapper">
+                <img
+                  class="main-image"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC08cFUI7lMi_js5dv0rMs86yEKNG0CRxDHoDQRs_ituFxokdj6X7zai_nooCsIXZ6ECc7j4dAiRfVVkWNDpUUZgskWP1ALAud0ya38eBsG8ZLYx6swtBW536pFjN7sO4WZ1t1YXAj1Fk1hdSvVK7v0nVpQ3gZRdxdM5Zz3HNZgJXucv159MEXkYbvoFMoWsCC0nj3wKvEdsLglELz1iIGliBIxeS5Q02py33jHwFfEpHLPee97toekSzMtygpeWH8KEW8Bkqhs8gHZ"
+                  alt="Elegant perfume bottle with dark lighting and floral accents"
+                />
+                <div class="badge">Best Seller</div>
+              </div>
+            </div>
+
+            <!-- Right: Product Info -->
+            <div style="padding-top: 0.5rem">
+              <!-- Breadcrumbs -->
+              <!-- <nav class="breadcrumbs">
+                <a href="#">Home</a>
+                <span style="color: var(--gray-400)">/</span>
+                <a href="#">Fragrance</a>
+                <span style="color: var(--gray-400)">/</span>
+                <span>Midnight Bloom</span>
+              </nav> -->
+
+              <!-- Title & Price -->
+              <div style="margin-bottom: 1rem">
+                <h1
+                  style="
+                    font-size: 40px;
+                    font-weight: bold;
+                    line-height: 1.1;
+                    margin-bottom: 12px;
+                  "
+                >
+                  Midnight Bloom
+                </h1>
+                <p
+                  style="
+                    font-size: 18px;
+                    color: var(--gray-500);
+                    font-weight: 500;
+                  "
+                >
+                  Eau de Parfum
+                </p>
+              </div>
+
+              <!-- Ratings -->
+              <div class="rating-link">
+                <div style="display: flex; color: var(--primary)">
+                  <span
+                    class="material-symbols-outlined filled"
+                    style="font-size: 18px"
+                    >star</span
+                  >
+                  <span
+                    class="material-symbols-outlined filled"
+                    style="font-size: 18px"
+                    >star</span
+                  >
+                  <span
+                    class="material-symbols-outlined filled"
+                    style="font-size: 18px"
+                    >star</span
+                  >
+                  <span
+                    class="material-symbols-outlined filled"
+                    style="font-size: 18px"
+                    >star</span
+                  >
+                  <span
+                    class="material-symbols-outlined filled"
+                    style="font-size: 18px"
+                    >star_half</span
+                  >
+                </div>
+                <span
+                  style="
+                    font-size: 14px;
+                    font-weight: 600;
+                    text-decoration: underline;
+                    text-decoration-color: #cbd5e1;
+                    text-underline-offset: 4px;
+                  "
+                  >4.8 (1,240 Reviews)</span
+                >
+              </div>
+
+              <!-- Price -->
+              <div style="font-size: 36px; font-weight: bold; margin: 1.5rem 0">
+                $125.00
+              </div>
+
+              <!-- Description -->
+              <p
+                style="
+                  font-size: 18px;
+                  line-height: 1.6;
+                  color: var(--gray-600);
+                  margin-bottom: 2rem;
+                "
+              >
+                A seductive blend of wild berries and jasmine, grounded by a
+                base of rich amber. Midnight Bloom captures the essence of a
+                moonlit garden, perfect for the evening and lingering long after
+                the sun rises.
+              </p>
+
+              <!-- Size Selector -->
+              <div style="margin-bottom: 2rem">
+                <label
+                  style="
+                    display: block;
+                    font-size: 14px;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    letter-spacing: 0.1em;
+                    margin-bottom: 12px;
+                  "
+                  >Select Size</label
+                >
+                <div class="size-options">
+                  <!-- <label class="size-label">
+                    <input
+                      type="radio"
+                      name="size"
+                      value="30ml"
+                      class="size-radio"
+                    />
+                    <div class="size-box">30ml</div>
+                  </label>
+                  <label class="size-label">
+                    <input
+                      type="radio"
+                      name="size"
+                      value="50ml"
+                      class="size-radio"
+                      checked
+                    />
+                    <div class="size-box">50ml</div>
+                  </label> -->
+                  <label class="size-label">
+                    <input
+                      type="radio"
+                      name="size"
+                      value="100ml"
+                      class="size-radio"
+                      checked
+                    />
+                    <div class="size-box">100ml</div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- CTA -->
+              <div class="cta-buttons">
+                <button class="add-to-cart">
+                  <span class="material-symbols-outlined">shopping_bag</span>
+                  Add to Cart
+                </button>
+                <button class="favorite-btn">
+                  <span
+                    class="material-symbols-outlined"
+                    style="font-size: 24px"
+                    >favorite</span
+                  >
+                </button>
+              </div>
+
+              <!-- Accordions -->
+              <div style="border-top: 1px solid var(--gray-200)">
+                <details open>
+                  <summary>
+                    <span>Fragrance Notes</span>
+                    <span class="material-symbols-outlined expand-icon"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    style="
+                      margin-top: 1rem;
+                      font-size: 14px;
+                      line-height: 1.6;
+                      color: var(--gray-600);
+                    "
+                  >
+                    <div class="notes-grid">
+                      <span style="color: var(--gray-400)">Top</span>
+                      <span>Black Currant, Wild Berries</span>
+                      <span style="color: var(--gray-400)">Heart</span>
+                      <span>Jasmine, White Rose</span>
+                      <span style="color: var(--gray-400)">Base</span>
+                      <span>Rich Amber, Musk, Vanilla</span>
+                    </div>
+                  </div>
+                </details>
+
+                <details>
+                  <summary>
+                    <span>Ingredients</span>
+                    <span class="material-symbols-outlined expand-icon"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    style="
+                      margin-top: 1rem;
+                      font-size: 14px;
+                      line-height: 1.6;
+                      color: var(--gray-600);
+                    "
+                  >
+                    Alcohol Denat., Parfum (Fragrance), Aqua (Water), Benzyl
+                    Salicylate, Limonene, Linalool, Hydroxycitronellal,
+                    Geraniol, Hexyl Cinnamal, Coumarin, Alpha-Isomethyl Ionone,
+                    Citronellol.
+                  </div>
+                </details>
+
+                <details>
+                  <summary>
+                    <span>Shipping & Returns</span>
+                    <span class="material-symbols-outlined expand-icon"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    style="
+                      margin-top: 1rem;
+                      font-size: 14px;
+                      line-height: 1.6;
+                      color: var(--gray-600);
+                    "
+                  >
+                    Free shipping on orders over $50. Returns accepted within 30
+                    days of purchase.
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reviews Section -->
+          <div class="reviews-section">
+            <h3 style="font-size: 24px; font-weight: bold; margin-bottom: 2rem">
+              Ratings & Reviews
+            </h3>
+            <div class="reviews-grid">
+              <!-- Summary -->
+              <div style="width: 100%">
+                <div class="summary-box">
+                  <div
+                    style="
+                      display: flex;
+                      align-items: flex-end;
+                      gap: 12px;
+                      margin-bottom: 1.5rem;
+                    "
+                  >
+                    <span style="font-size: 72px; font-weight: 900">4.8</span>
+                    <div>
+                      <div
+                        style="
+                          display: flex;
+                          color: var(--primary);
+                          margin-bottom: 4px;
+                        "
+                      >
+                        <span
+                          class="material-symbols-outlined filled"
+                          style="font-size: 20px"
+                          >star</span
+                        >
+                        <span
+                          class="material-symbols-outlined filled"
+                          style="font-size: 20px"
+                          >star</span
+                        >
+                        <span
+                          class="material-symbols-outlined filled"
+                          style="font-size: 20px"
+                          >star</span
+                        >
+                        <span
+                          class="material-symbols-outlined filled"
+                          style="font-size: 20px"
+                          >star</span
+                        >
+                        <span
+                          class="material-symbols-outlined filled"
+                          style="font-size: 20px"
+                          >star_half</span
+                        >
+                      </div>
+                      <span style="font-size: 14px; color: var(--gray-500)"
+                        >Based on 1,240 reviews</span
+                      >
+                    </div>
+                  </div>
+
+                  <div style="display: flex; flex-direction: column; gap: 12px">
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        gap: 16px;
+                        font-size: 14px;
+                      "
+                    >
+                      <span
+                        style="
+                          width: 12px;
+                          font-weight: bold;
+                          color: var(--gray-500);
+                        "
+                        >5</span
+                      >
+                      <div class="bar-outer flex-1">
+                        <div class="bar-inner" style="width: 77%"></div>
+                      </div>
+                      <span
+                        style="
+                          width: 32px;
+                          text-align: right;
+                          color: var(--pink-light);
+                        "
+                        >77%</span
+                      >
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        gap: 16px;
+                        font-size: 14px;
+                      "
+                    >
+                      <span
+                        style="
+                          width: 12px;
+                          font-weight: bold;
+                          color: var(--gray-500);
+                        "
+                        >4</span
+                      >
+                      <div class="bar-outer flex-1">
+                        <div class="bar-inner" style="width: 15%"></div>
+                      </div>
+                      <span
+                        style="
+                          width: 32px;
+                          text-align: right;
+                          color: var(--pink-light);
+                        "
+                        >15%</span
+                      >
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        gap: 16px;
+                        font-size: 14px;
+                      "
+                    >
+                      <span
+                        style="
+                          width: 12px;
+                          font-weight: bold;
+                          color: var(--gray-500);
+                        "
+                        >3</span
+                      >
+                      <div class="bar-outer flex-1">
+                        <div class="bar-inner" style="width: 5%"></div>
+                      </div>
+                      <span
+                        style="
+                          width: 32px;
+                          text-align: right;
+                          color: var(--pink-light);
+                        "
+                        >5%</span
+                      >
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        gap: 16px;
+                        font-size: 14px;
+                      "
+                    >
+                      <span
+                        style="
+                          width: 12px;
+                          font-weight: bold;
+                          color: var(--gray-500);
+                        "
+                        >2</span
+                      >
+                      <div class="bar-outer flex-1">
+                        <div class="bar-inner" style="width: 2%"></div>
+                      </div>
+                      <span
+                        style="
+                          width: 32px;
+                          text-align: right;
+                          color: var(--pink-light);
+                        "
+                        >2%</span
+                      >
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        gap: 16px;
+                        font-size: 14px;
+                      "
+                    >
+                      <span
+                        style="
+                          width: 12px;
+                          font-weight: bold;
+                          color: var(--gray-500);
+                        "
+                        >1</span
+                      >
+                      <div class="bar-outer flex-1">
+                        <div class="bar-inner" style="width: 1%"></div>
+                      </div>
+                      <span
+                        style="
+                          width: 32px;
+                          text-align: right;
+                          color: var(--pink-light);
+                        "
+                        >1%</span
+                      >
+                    </div>
+                  </div>
+
+                  <button class="write-review-btn">Write a Review</button>
+                </div>
+              </div>
+
+              <!-- Review Cards -->
+              <div
+                style="
+                  flex: 1;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 1.5rem;
+                "
+              >
+                <div class="review-card">
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: flex-start;
+                      margin-bottom: 1rem;
+                    "
+                  >
+                    <div style="display: flex; align-items: center; gap: 12px">
+                      <div class="avatar-initials">JD</div>
+                      <div>
+                        <p style="font-size: 14px; font-weight: bold">
+                          Jane Doe
+                        </p>
+                        <p style="font-size: 12px; color: var(--gray-500)">
+                          Verified Buyer
+                        </p>
+                      </div>
+                    </div>
+                    <span style="font-size: 12px; color: var(--gray-400)"
+                      >2 days ago</span
+                    >
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      color: var(--primary);
+                      margin-bottom: 12px;
+                    "
+                  >
+                    <span
+                      class="material-symbols-outlined filled"
+                      style="font-size: 14px"
+                      >star</span
+                    >
+                    <span
+                      class="material-symbols-outlined filled"
+                      style="font-size: 14px"
+                      >star</span
+                    >
+                    <span
+                      class="material-symbols-outlined filled"
+                      style="font-size: 14px"
+                      >star</span
+                    >
+                    <span
+                      class="material-symbols-outlined filled"
+                      style="font-size: 14px"
+                      >star</span
+                    >
+                    <span
+                      class="material-symbols-outlined filled"
+                      style="font-size: 14px"
+                      >star</span
+                    >
+                  </div>
+                  <h4 style="font-weight: bold; margin-bottom: 0.5rem">
+                    My new signature scent!
+                  </h4>
+                  <p
+                    style="
+                      font-size: 14px;
+                      line-height: 1.6;
+                      color: var(--gray-600);
+                    "
+                  >
+                    I've been looking for a perfume that isn't too sweet but
+                    still feminine. This is perfect. The amber notes really come
+                    through after an hour.
+                  </p>
+                </div>
+
+                <div class="review-card">
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: flex-start;
+                      margin-bottom: 1rem;
+                    "
+                  >
+                    <div style="display: flex; align-items: center; gap: 12px">
+                      <div class="avatar-initials">MS</div>
+                      <div>
+                        <p style="font-size: 14px; font-weight: bold">
+                          Maria Sanchez
+                        </p>
+                        <p style="font-size: 12px; color: var(--gray-500)">
+                          Verified Buyer
+                        </p>
+                      </div>
+                    </div>
+                    <span style="font-size: 12px; color: var(--gray-400)"
+                      >1 week ago</span
+                    >
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      color: var(--primary);
+                      margin-bottom: 12px;
+                    "
+                  >
+                    <span
+                      class="material-symbols-outlined filled"
+                      style="font-size: 14px"
+                      >star</span
+                    >
+                    <span
+                      class="material-symbols-outlined filled"
+                      style="font-size: 14px"
+                      >star</span
+                    >
+                    <span
+                      class="material-symbols-outlined filled"
+                      style="font-size: 14px"
+                      >star</span
+                    >
+                    <span
+                      class="material-symbols-outlined filled"
+                      style="font-size: 14px"
+                      >star</span
+                    >
+                    <span
+                      class="material-symbols-outlined"
+                      style="font-size: 14px; color: var(--gray-300)"
+                      >star</span
+                    >
+                  </div>
+                  <h4 style="font-weight: bold; margin-bottom: 0.5rem">
+                    Beautiful but strong
+                  </h4>
+                  <p
+                    style="
+                      font-size: 14px;
+                      line-height: 1.6;
+                      color: var(--gray-600);
+                    "
+                  >
+                    The bottle is gorgeous and the scent is very luxurious. A
+                    little goes a long way, so be careful not to overspray!
+                  </p>
+                </div>
+
+                <button
+                  style="
+                    color: var(--primary);
+                    font-weight: bold;
+                    font-size: 14px;
+                  "
+                >
+                  View more reviews
+                </button>
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <!-- <div class="speacial-text-container">
+          <h2 class="special-heading">samples</h2>
+          <p>samples</p>
+        </div> -->
+        <!-- <main class="page-bestseller section2">
+          <section class="hero-bestseller" aria-label="Hero product image">
+         
+            <a href="#">
+              <img
+                class="big-img-bestseller"
+                src="/assets/images/collection1.jpeg"
+                alt="Perfume hero"
+              />
+            </a>
+          </section>
+        </main> -->
+
+        <footer class="footer">
+          <div class="container-about">
+            <!-- Header Section -->
+            <div class="speacial-text-container">
+              <h2 class="special-heading about">Connect With Us</h2>
+              <p>Stay in touch and explore more</p>
+            </div>
+
+            <!-- Footer Content -->
+            <div class="footer-content">
+              <!-- Quick Links -->
+              <div class="footer-section quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                  <li>
+                    <a href="#home" class="navigation-item">
+                      <span class="shape"></span>
+                      <span class="text">Home</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#products" class="navigation-item">
+                      <span class="shape"></span>
+                      <span class="text">Products</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#about" class="navigation-item">
+                      <span class="shape"></span>
+                      <span class="text">About</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#contact" class="navigation-item">
+                      <span class="shape"></span>
+                      <span class="text">Contact</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Social Media -->
+              <div class="footer-section socials">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                  <a
+                    href="https://twitter.com"
+                    target="_blank"
+                    class="navigation-item"
+                  >
+                    <span class="shape"></span>
+                    <span class="text">Twitter</span>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/lara.perfum/?utm_source=qr&igsh=eWw1NWE1d2p5NG5r#"
+                    target="_blank"
+                    class="navigation-item"
+                  >
+                    <span class="shape"></span>
+                    <span class="text">Instagram</span>
+                  </a>
+                  <a
+                    href="https://linkedin.com"
+                    target="_blank"
+                    class="navigation-item"
+                  >
+                    <span class="shape"></span>
+                    <span class="text">LinkedIn</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Contact Info -->
+              <div class="footer-section contact-info">
+                <h3>Contact</h3>
+                <p>
+                  Email:
+                  <a href="mailto:mohamadallosh@hotmail.com"
+                    >mohamadallosh@hotmail.com</a
+                  >
+                </p>
+                <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                <p>Calgary, Canada | Online Store</p>
+              </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom">
+              <p>&copy; 2025 Your Brand. All rights reserved.</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Side Cart -->
+    <div
+      id="sideCart"
+      class="side-cart"
+      style="
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 24rem;
+        background: #fff;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
+      "
+    >
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 15px;
+          border-bottom: 1px solid #ccc;
+        "
+      >
+        <h2 style="font-size: 1.5rem; font-weight: 600">Your Cart</h2>
+        <button
+          id="closeCart"
+          style="
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+          "
+        >
+          <span class="material-symbols-outlined">x</span>
+        </button>
+      </div>
+
+      <div id="cartItems" style="flex: 1; overflow-y: auto; padding: 15px">
+        <!-- Cart items will be injected here -->
+        <p style="color: #777">Your cart is empty.</p>
+      </div>
+
+      <div style="padding: 15px; border-top: 1px solid #ccc">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+          "
+        >
+          <span style="font-weight: 600">Subtotal</span>
+          <span id="cartSubtotal">$0.00</span>
+        </div>
+        <button
+          style="
+            width: 100%;
+            background: #d97706;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+          "
+        >
+          View Cart
+        </button>
+        <button
+          style="
+            width: 100%;
+            background: #fff;
+            color: #333;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+          "
+        >
+          Checkout
+        </button>
+      </div>
+    </div>
+
+    <!-- Overlay when cart is open -->
+    <div
+      id="cartOverlay"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        z-index: 999;
+      "
+    ></div>
+
+    <!-- ==================== QUICK VIEW MODAL (Pure HTML + CSS) ==================== -->
+    <div id="quickViewModal" class="qv-modal">
+      <div id="quickViewContent" class="qv-content">
+        <!-- LEFT: Product Image -->
+        <div class="qv-image-container">
+          <img id="modalImage" src="" alt="Perfume" class="qv-image" />
+        </div>
+
+        <!-- RIGHT: Product Details -->
+        <div class="qv-details">
+          <button onclick="closeQuickView()" class="qv-close-btn">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+
+          <div class="qv-details-inner">
+            <!-- Title -->
+            <div class="qv-title-section">
+              <h3 id="modalTitle" class="qv-title"></h3>
+              <p class="qv-subtitle">100 ml</p>
+            </div>
+
+            <!-- Stock & Sales -->
+            <div class="qv-status">
+              <span class="qv-in-stock">
+                <span class="material-symbols-outlined">check_circle</span>
+                In Stock
+              </span>
+              <!-- <span class="qv-sold">
+                <span class="material-symbols-outlined"
+                  >local_fire_department</span
+                >
+                <span id="modalSold">63143</span> sold
+              </span> -->
+            </div>
+
+            <!-- Reviews Section -->
+            <section class="reviews-section">
+              <h2>Ratings & Reviews</h2>
+
+              <div class="reviews-layout">
+                <!-- LEFT: SUMMARY -->
+                <div class="reviews-summary">
+                  <div class="rating-main">
+                    <span class="rating-number">4.8</span>
+                    <div class="stars">★★★★★</div>
+                  </div>
+
+                  <p class="rating-count">Based on 1,240 reviews</p>
+
+                  <div class="rating-bars">
+                    <div class="bar">
+                      <span>5</span>
+                      <div class="progress"><div style="width: 77%"></div></div>
+                      <span>77%</span>
+                    </div>
+                    <div class="bar">
+                      <span>4</span>
+                      <div class="progress"><div style="width: 15%"></div></div>
+                      <span>15%</span>
+                    </div>
+                    <div class="bar">
+                      <span>3</span>
+                      <div class="progress"><div style="width: 5%"></div></div>
+                      <span>5%</span>
+                    </div>
+                    <div class="bar">
+                      <span>2</span>
+                      <div class="progress"><div style="width: 2%"></div></div>
+                      <span>2%</span>
+                    </div>
+                    <div class="bar">
+                      <span>1</span>
+                      <div class="progress"><div style="width: 1%"></div></div>
+                      <span>1%</span>
+                    </div>
+                  </div>
+
+                  <button class="review-btn">Write a Review</button>
+                </div>
+
+                <!-- RIGHT: REVIEWS -->
+                <div class="reviews-list">
+                  <div class="review-card">
+                    <div class="review-header">
+                      <div class="avatar">JD</div>
+                      <div>
+                        <strong>Jane Doe</strong>
+                        <span class="verified">Verified Buyer</span>
+                      </div>
+                      <span class="time">2 days ago</span>
+                    </div>
+                    <div class="stars small">★★★★★</div>
+                    <h4>My new signature scent!</h4>
+                    <p>
+                      I've been looking for a perfume that isn't too sweet but
+                      still feminine. This is perfect. The amber notes really
+                      come through after an hour.
+                    </p>
+                  </div>
+
+                  <div class="review-card">
+                    <div class="review-header">
+                      <div class="avatar">MS</div>
+                      <div>
+                        <strong>Maria Sanchez</strong>
+                        <span class="verified">Verified Buyer</span>
+                      </div>
+                      <span class="time">1 week ago</span>
+                    </div>
+                    <div class="stars small">★★★★☆</div>
+                    <h4>Beautiful but strong</h4>
+                    <p>
+                      The bottle is gorgeous and the scent is very luxurious. A
+                      little goes a long way, so be careful not to overspray!
+                    </p>
+                  </div>
+
+                  <a href="#" class="view-all">View more reviews</a>
+                </div>
+              </div>
+            </section>
+
+            <!-- Price -->
+            <div class="qv-price">
+              <span id="modalDiscountPrice" class="qv-old-price"></span>
+              <span id="modalPrice" class="qv-new-price">$50</span>
+            </div>
+
+            <!-- Try-on Text -->
+            <div class="qv-try-on">
+              <p>Try it on your skin and choose the best option for you</p>
+            </div>
+
+            <!-- Size Selector -->
+            <!-- <div class="qv-size">
+              <label class="qv-size-option">
+                <input type="radio" name="size" checked />
+                <span class="qv-size-label">200 ml – Full Bottle</span>
+              </label>
+              <div class="qv-size-pricing">
+                <span class="qv-strike">$275</span>
+                <span class="qv-bold">$125</span>
+              </div>
+            </div> -->
+
+            <!-- Action Buttons -->
+            <div class="qv-actions">
+              <button class="qv-add-to-cart">
+                <span class="material-symbols-outlined">shopping_bag</span>
+                Add to Cart
+              </button>
+              <button class="qv-buy-now">Buy Now</button>
+            </div>
+
+            <!-- Related Products -->
+            <!-- <div class="qv-related">
+              <p class="qv-related-title">You may also like</p>
+              <div class="qv-related-items">
+                <div class="qv-related-item">
+                  <img
+                    src="static/img/sample1.jpg"
+                    alt="Wild Colt"
+                    class="qv-related-img"
+                  />
+                  <p class="qv-related-name">Wild Colt</p>
+                  <p class="qv-related-price">$129</p>
+                </div>
+                <div class="qv-related-item">
+                  <img
+                    src="static/img/sample2.jpg"
+                    alt="Crown Spirit"
+                    class="qv-related-img"
+                  />
+                  <p class="qv-related-name">Crown Spirit</p>
+                  <p class="qv-related-price">$95</p>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Toast Notification (Top-Left) -->
+    <div id="authToast" class="auth-toast">
+      <span class="material-symbols-outlined">warning</span>
+      <span
+        >Please
+        <a
+          href="sign_in.html"
+          style="color: #d97706; text-decoration: underline"
+          >sign in</a
+        >
+        to add favorites.</span
+      >
+    </div>
+    <script>
+      // Simple thumbnail switching
+      const thumbs = document.querySelectorAll(".thumb-btn");
+      const mainImg = document.querySelector(".main-image");
+
+      thumbs.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          thumbs.forEach((t) => t.classList.remove("active"));
+          btn.classList.add("active");
+          mainImg.src = btn.querySelector("img").src;
+        });
+      });
+    </script>
+    <script src="static/js/shopify_products.js"></script>
+    <script src="static/js/main.js"></script>
+  </body>
+</html>

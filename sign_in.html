@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sign In - Perfume App</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#8B0000",
+              "background-light": "#FFF8F3",
+              "background-dark": "#1A1111",
+              "text-light": "#4B3832",
+              "text-dark": "#E5DACE",
+              accent: "#DAA520",
+            },
+            fontFamily: {
+              display: ["Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark"
+  >
+    <div class="relative flex min-h-screen w-full">
+      <div
+        class="hidden lg:flex lg:w-1/2 items-center justify-center bg-background-light dark:bg-background-dark"
+      >
+        <div class="relative w-full h-full">
+          <div
+            class="absolute inset-0 bg-center bg-no-repeat bg-cover"
+            data-alt="A stylized photo of a perfume bottle on a dark, moody background with floral elements."
+            style="
+              background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCZCt8f-Vu8-DUiAYyoB18vKPUhFuil0H_GHz5k29VKhhh8fc_XdT2xBNoYsm1IpbL-pi1rHO7CGLNNNAaG7XzTPQc4cu03ZTKl1XHCu1SfE9mKgY9f9Mbe-Nn7U6xm9Kqgr6TRIkZvBg8GXBnck5Tszhi1jMNkJcUw7x8ISDZiBsOykNz6fLl8u9Dj_NW2VTJbY23-bcsLGL5_JYWIK0KfdmSemDTcLANHBNjOjb_IHgUbE37QOp_JwjjPVaj_1Gk3eljJS0lkF4Y');
+            "
+          ></div>
+          <div class="absolute inset-0 bg-black/30"></div>
+        </div>
+      </div>
+      <div class="w-full lg:w-1/2 flex items-center justify-center p-6 sm:p-12">
+        <div class="w-full max-w-md space-y-8">
+          <div class="text-center">
+            <h1
+              class="text-3xl sm:text-4xl font-bold tracking-tight text-text-light dark:text-text-dark"
+            >
+              LA<span class="text-primary">RA</span>
+            </h1>
+            <p class="mt-2 text-text-light/80 dark:text-text-dark/80">
+              Welcome back, please sign in to your account.
+            </p>
+          </div>
+          <div class="space-y-6">
+            <label class="flex flex-col">
+              <p
+                class="text-base font-medium pb-2 text-text-light dark:text-text-dark"
+              >
+                Email
+              </p>
+              <input
+                id="email"
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-text-light/20 dark:border-text-dark/20 bg-background-light dark:bg-background-dark h-14 placeholder:text-text-light/50 dark:placeholder:text-text-dark/50 p-4 text-base font-normal"
+                placeholder="you@example.com"
+                type="email"
+              />
+            </label>
+            <label class="flex flex-col">
+              <p
+                class="text-base font-medium pb-2 text-text-light dark:text-text-dark"
+              >
+                Password
+              </p>
+              <div class="flex w-full flex-1 items-stretch rounded-xl">
+                <input
+                  id="password"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-text-light/20 dark:border-text-dark/20 bg-background-light dark:bg-background-dark h-14 placeholder:text-text-light/50 dark:placeholder:text-text-dark/50 p-4 rounded-r-none border-r-0 pr-2 text-base font-normal"
+                  placeholder="Enter your password"
+                  type="password"
+                />
+
+                <div
+                  class="text-text-light/60 dark:text-text-dark/60 flex border border-text-light/20 dark:border-text-dark/20 bg-background-light dark:bg-background-dark items-center justify-center pr-4 rounded-r-xl border-l-0"
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    data-icon="Eye"
+                    data-size="24px"
+                    data-weight="regular"
+                    >visibility_off</span
+                  >
+                </div>
+              </div>
+            </label>
+          </div>
+          <div class="flex items-center justify-end">
+            <p class="text-sm font-normal leading-normal text-right">
+              <a class="text-primary hover:underline" href="#"
+                >Forgot Password?</a
+              >
+            </p>
+          </div>
+          <div>
+            <button
+              id="loginBtn"
+              class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors duration-300"
+            >
+              <span class="truncate">Sign In</span>
+            </button>
+          </div>
+          <div class="relative">
+            <div class="absolute inset-0 flex items-center">
+              <div
+                class="w-full border-t border-text-light/20 dark:border-text-dark/20"
+              ></div>
+            </div>
+            <div class="relative flex justify-center text-sm">
+              <span
+                class="bg-background-light dark:bg-background-dark px-2 text-text-light/80 dark:text-text-dark/80"
+                >Or continue with</span
+              >
+            </div>
+          </div>
+          <div>
+            <div class="flex gap-4">
+              <button
+                id="googleBtn"
+                class="flex-1 flex items-center justify-center gap-2 py-3.5 px-4 rounded-lg border border-text-light/20 dark:border-text-dark/20 hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors"
+              >
+                Google
+              </button>
+
+              <!-- <button
+                class="flex-1 flex items-center justify-center gap-2 py-3.5 px-4 rounded-lg border border-text-light/20 dark:border-text-dark/20 hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors"
+              >
+                <svg
+                  class="w-5 h-5 fill-text-light dark:fill-text-dark"
+                  viewbox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 0a8 8 0 0 0-8 8c0 3.444 2.156 6.335 5.125 7.426.375.063.5-.188.5-.375v-1.375c-2.094.438-2.531-1-2.531-1-.313-.813-.781-1.031-.781-1.031-.656-.438.031-.438.031-.438.719.031 1.094.75 1.094.75.625 1.094 1.656.781 2.063.594.063-.469.25-.781.469-.969-1.563-.156-3.188-.781-3.188-3.531 0-.781.281-1.406.75-1.906-.094-.188-.344-.875.063-1.875 0 0 .594-.188 1.938.719.563-.156 1.156-.219 1.75-.219s1.188.063 1.75.219c1.344-.906 1.938-.719 1.938-.719.406 1 .156 1.688.063 1.875.469.5.75 1.125.75 1.906 0 2.75-1.625 3.375-3.188 3.531.281.25.5.719.5 1.469v2.188c0 .219.125.469.5.375C13.844 14.335 16 11.444 16 8a8 8 0 0 0-8-8z"
+                  ></path>
+                </svg>
+                <span
+                  class="text-sm font-medium text-text-light dark:text-text-dark"
+                  >GitHub</span
+                >
+              </button> -->
+            </div>
+          </div>
+          <p
+            class="text-center text-sm text-text-light/80 dark:text-text-dark/80"
+          >
+            Don't have an account?
+            <a
+              class="font-medium text-primary hover:underline"
+              href="sign_up.html"
+              >Sign up</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script> -->
+
+    <script type="module">
+      // ── Firebase imports ────────────────────────────────────────────────
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
+      import {
+        getAuth,
+        signInWithEmailAndPassword,
+        GoogleAuthProvider,
+        signInWithPopup,
+        onAuthStateChanged,
+      } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js";
+
+      import {
+        getFirestore,
+        doc,
+        setDoc,
+        serverTimestamp,
+      } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js";
+
+      // ── Firebase config ────────────────────────────────────────────────
+      const firebaseConfig = {
+        apiKey: "AIzaSyCJ2OWTPNbsHmHxMK5W7HQ0CqWm62Z-YQs",
+        authDomain: "lara-76102.firebaseapp.com",
+        projectId: "lara-76102",
+        storageBucket: "lara-76102.firebasestorage.app",
+        messagingSenderId: "628256871308",
+        appId: "1:628256871308:web:c7f854921a683a3f72bca9",
+        measurementId: "G-XKFL5M40TH",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      const db = getFirestore(app);
+
+      // ── Helper for showing messages ───────────────────────────────────
+      const messageEl = document.createElement("p");
+      messageEl.className = "text-center text-sm mt-3 min-h-[1.5rem]";
+      document.querySelector("#loginBtn").parentElement.after(messageEl);
+
+      function showMessage(text, isError = false) {
+        messageEl.textContent = text;
+        messageEl.style.color = isError ? "#e74c3c" : "#2ecc71";
+      }
+
+      async function getClientIp() {
+        try {
+          const res = await fetch("https://api.ipify.org?format=json");
+          const data = await res.json();
+          return data.ip || "unknown";
+        } catch {
+          return "unknown";
+        }
+      }
+
+      // ── Password visibility toggle ───────────────────────────────────
+      document
+        .querySelectorAll(".material-symbols-outlined")
+        .forEach((icon) => {
+          icon.addEventListener("click", () => {
+            const input = icon.parentElement.previousElementSibling;
+            if (!input) return;
+            input.type = input.type === "password" ? "text" : "password";
+            icon.textContent =
+              input.type === "password" ? "visibility_off" : "visibility";
+          });
+        });
+
+      // ── Email/Password Sign In ───────────────────────────────────────
+      document
+        .getElementById("loginBtn")
+        .addEventListener("click", async () => {
+          const email = document.getElementById("email").value.trim();
+          const password = document.getElementById("password").value;
+
+          if (!email || !password) {
+            showMessage("Please enter both email and password", true);
+            return;
+          }
+
+          document.getElementById("loginBtn").disabled = true;
+          showMessage("Signing in...");
+
+          try {
+            const userCredential = await signInWithEmailAndPassword(
+              auth,
+              email,
+              password
+            );
+            const user = userCredential.user;
+
+            // Optional: Update lastSignIn in Firestore
+            const ip = await getClientIp();
+            await setDoc(
+              doc(db, "users", user.uid),
+              {
+                lastSignIn: serverTimestamp(),
+                ip: ip,
+              },
+              { merge: true }
+            );
+
+            showMessage("Signed in successfully! Redirecting...");
+            setTimeout(() => {
+              window.location.href = "index.html"; // main page
+            }, 1500);
+          } catch (err) {
+            console.error(err);
+            showMessage(err.message || "Failed to sign in", true);
+          } finally {
+            document.getElementById("loginBtn").disabled = false;
+          }
+        });
+
+      // ── Google Sign-In ──────────────────────────────────────────────
+      document
+        .getElementById("googleBtn")
+        .addEventListener("click", async () => {
+          const provider = new GoogleAuthProvider();
+          showMessage("Connecting with Google...");
+          document.getElementById("googleBtn").disabled = true;
+
+          try {
+            const result = await signInWithPopup(auth, provider);
+            const user = result.user;
+            const ip = await getClientIp();
+
+            await setDoc(
+              doc(db, "users", user.uid),
+              {
+                uid: user.uid,
+                name: user.displayName || "Google User",
+                email: user.email.toLowerCase(),
+                lastSignIn: serverTimestamp(),
+                ip: ip,
+                photoURL: user.photoURL || null,
+                provider: "google",
+              },
+              { merge: true }
+            );
+
+            showMessage("Signed in with Google! Redirecting...");
+            setTimeout(() => (window.location.href = "/"), 1500);
+          } catch (err) {
+            console.error(err);
+            showMessage(err.message || "Google sign-in failed", true);
+          } finally {
+            document.getElementById("googleBtn").disabled = false;
+          }
+        });
+
+      // ── Auto redirect if already logged in ───────────────────────────
+      onAuthStateChanged(auth, (user) => {
+        if (user) window.location.href = "index.html";
+      });
+    </script>
+  </body>
+</html>
+
+

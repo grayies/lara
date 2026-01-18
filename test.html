@@ -1,0 +1,303 @@
+<!-- ==================== REVIEWS SECTION – FULL CODE ==================== -->
+
+<!-- 1. Firebase Compat SDKs – place these BEFORE your custom script -->
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+
+<!-- 2. HTML – Reviews Section -->
+<div class="reviews-section" id="reviews" style="margin: 4rem 0; padding: 2rem; background: rgba(0,0,0,0.15); border-radius: 12px;">
+  
+  <h3 style="font-size: 1.8rem; font-weight: bold; margin-bottom: 0.8rem; color: var(--special-color);">
+    Ratings & Reviews
+  </h3>
+
+  <p style="margin-bottom: 2rem; opacity: 0.8; font-size: 0.95rem;">
+    *Reviews are from verified purchasers only to ensure authenticity.
+  </p>
+
+  <!-- Write a Review Form -->
+  <div class="write-review" style="margin-bottom: 3rem; padding: 1.8rem; background: rgba(255,255,255,0.06); border-radius: 10px; border: 1px solid rgba(255,255,255,0.12);">
+    <h4 style="margin-bottom: 1.4rem; font-size: 1.3rem;">Write a Review</h4>
+    
+    <form id="reviewForm">
+      <!-- Rating Stars -->
+      <div style="margin-bottom: 1.4rem;">
+        <label style="display: block; margin-bottom: 0.6rem; font-weight: 600;">Rating</label>
+        <div class="star-rating-input" style="font-size: 2.2rem; color: #555; user-select: none;">
+          <input type="radio" id="star5" name="rating" value="5" required style="display:none;">
+          <label for="star5" title="5 stars">★</label>
+          <input type="radio" id="star4" name="rating" value="4" style="display:none;">
+          <label for="star4" title="4 stars">★</label>
+          <input type="radio" id="star3" name="rating" value="3" style="display:none;">
+          <label for="star3" title="3 stars">★</label>
+          <input type="radio" id="star2" name="rating" value="2" style="display:none;">
+          <label for="star2" title="2 stars">★</label>
+          <input type="radio" id="star1" name="rating" value="1" style="display:none;">
+          <label for="star1" title="1 star">★</label>
+        </div>
+      </div>
+
+      <!-- Title -->
+      <div style="margin-bottom: 1.4rem;">
+        <label for="reviewTitle" style="display: block; margin-bottom: 0.6rem; font-weight: 600;">Review Title</label>
+        <input type="text" id="reviewTitle" name="title" required placeholder="e.g. Absolutely love this scent!" 
+               style="width:100%; padding: 0.9rem; border:1px solid #444; border-radius:6px; background:#1a1a1a; color:#fff; font-size:1rem;">
+      </div>
+
+      <!-- Comment -->
+      <div style="margin-bottom: 1.4rem;">
+        <label for="reviewComment" style="display: block; margin-bottom: 0.6rem; font-weight: 600;">Your Review</label>
+        <textarea id="reviewComment" name="comment" rows="5" required placeholder="What did you like? How long does it last?..." 
+                  style="width:100%; padding: 0.9rem; border:1px solid #444; border-radius:6px; background:#1a1a1a; color:#fff; font-size:1rem; resize:vertical;"></textarea>
+      </div>
+
+      <!-- Name -->
+      <div style="margin-bottom: 1.6rem;">
+        <label for="reviewName" style="display: block; margin-bottom: 0.6rem; font-weight: 600;">Name (optional)</label>
+        <input type="text" id="reviewName" name="name" placeholder="Jane D." 
+               style="width:100%; padding: 0.9rem; border:1px solid #444; border-radius:6px; background:#1a1a1a; color:#fff; font-size:1rem;">
+      </div>
+
+      <button type="submit" id="submitReviewBtn" 
+              style="background: var(--special-color); color:white; padding: 0.9rem 2rem; border:none; border-radius: 999px; font-weight:600; cursor:pointer; font-size:1.05rem;">
+        Submit Review
+      </button>
+
+      <p id="formMessage" style="margin-top:1.2rem; min-height:1.5em; font-weight:500;"></p>
+    </form>
+  </div>
+
+  <!-- Reviews Grid: Summary + List -->
+  <div class="reviews-grid" style="display: grid; grid-template-columns: 1fr 2fr; gap: 2.5rem;">
+    
+    <!-- Left: Summary -->
+    <div>
+      <div id="review-summary" style="padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 10px;">
+        <div style="display: flex; align-items: flex-end; gap: 1rem; margin-bottom: 1.5rem;">
+          <span id="avg-rating" style="font-size: 4.5rem; font-weight: 900;">—</span>
+          <div>
+            <div id="avg-stars" style="display: flex; color: #f5c518; margin-bottom: 0.4rem; font-size: 1.4rem;"></div>
+            <span id="review-count-text" style="font-size: 1rem; color: #aaa;">Loading reviews...</span>
+          </div>
+        </div>
+
+        <div id="rating-bars" style="display: flex; flex-direction: column; gap: 0.9rem;"></div>
+      </div>
+    </div>
+
+    <!-- Right: Reviews List -->
+    <div id="reviews-list" style="display: flex; flex-direction: column; gap: 1.6rem;">
+      <div class="loading" style="text-align:center; padding: 4rem 0; color:#888; font-style:italic;">
+        Loading reviews...
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. CSS (add to your <style> tag or .css file) -->
+<style>
+  .star-rating-input {
+    direction: rtl;
+    display: inline-block;
+  }
+  .star-rating-input label {
+    color: #444;
+    transition: color 0.18s;
+    cursor: pointer;
+  }
+  .star-rating-input input[type="radio"]:checked ~ label,
+  .star-rating-input label:hover,
+  .star-rating-input label:hover ~ label {
+    color: #f5c518;
+  }
+
+  .bar-outer {
+    height: 10px;
+    background: #333;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .bar-inner {
+    height: 100%;
+    background: var(--special-color);
+    transition: width 0.6s ease;
+  }
+
+  .review-card {
+    padding: 1.4rem;
+    background: rgba(255,255,255,0.04);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .avatar-initials {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--special-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+</style>
+
+<!-- 4. JavaScript – place this AFTER the Firebase scripts -->
+<script>
+  // ==================== CONFIG ====================
+  const firebaseConfig = {
+    apiKey: "AIzaSyCJ2OWTPNbsHmHxMK5W7HQ0CqWm62Z-YQs",
+    authDomain: "lara-76102.firebaseapp.com",
+    projectId: "lara-76102",
+    storageBucket: "lara-76102.firebasestorage.app",
+    messagingSenderId: "628256871308",
+    appId: "1:628256871308:web:c7f854921a683a3f72bca9",
+    measurementId: "G-XKFL5M40TH"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+  const PRODUCT_ID = "blue-wave";
+
+  // ==================== LOAD & REAL-TIME ====================
+  async function loadReviews() {
+    try {
+      const reviewsRef = db.collection(`reviews/${PRODUCT_ID}/reviews`);
+      const snapshot = await reviewsRef.orderBy("createdAt", "desc").get();
+
+      if (snapshot.empty) {
+        document.getElementById("reviews-list").innerHTML = '<p style="text-align:center; padding:4rem 0; color:#888;">No reviews yet. Be the first!</p>';
+        document.getElementById("review-count-text").textContent = "0 reviews";
+        return;
+      }
+
+      let total = 0, c5=0,c4=0,c3=0,c2=0,c1=0;
+      const reviews = [];
+
+      snapshot.forEach(doc => {
+        const d = doc.data();
+        total += d.rating || 0;
+        if(d.rating===5) c5++; else if(d.rating===4) c4++; else if(d.rating===3) c3++; else if(d.rating===2) c2++; else if(d.rating===1) c1++;
+        reviews.push(d);
+      });
+
+      const count = snapshot.size;
+      const avg = count ? (total / count).toFixed(1) : 0;
+
+      // Summary
+      document.getElementById("avg-rating").textContent = avg;
+      const starsEl = document.getElementById("avg-stars");
+      starsEl.innerHTML = "";
+      const full = Math.floor(avg);
+      const half = avg % 1 >= 0.5;
+      for(let i=0; i<full; i++) starsEl.innerHTML += '<span class="material-symbols-outlined filled">star</span>';
+      if(half) starsEl.innerHTML += '<span class="material-symbols-outlined filled">star_half</span>';
+      for(let i=full+(half?1:0); i<5; i++) starsEl.innerHTML += '<span class="material-symbols-outlined">star</span>';
+
+      document.getElementById("review-count-text").textContent = `${avg} (${count} reviews)`;
+
+      // Bars
+      const bars = document.getElementById("rating-bars");
+      bars.innerHTML = "";
+      const pct = [c5,c4,c3,c2,c1].map(v => count ? Math.round((v/count)*100) : 0);
+      for(let i=5; i>=1; i--){
+        const p = pct[5-i];
+        bars.innerHTML += `
+          <div style="display:flex; align-items:center; gap:1rem; font-size:0.95rem;">
+            <span style="width:14px; text-align:right; color:#aaa;">${i}</span>
+            <div class="bar-outer flex-1"><div class="bar-inner" style="width:${p}%"></div></div>
+            <span style="width:40px; text-align:right; color:#f9a8d4;">${p}%</span>
+          </div>`;
+      }
+
+      // Reviews list
+      const list = document.getElementById("reviews-list");
+      list.innerHTML = "";
+      reviews.slice(0,12).forEach(r => {
+        const date = r.createdAt ? new Date(r.createdAt.toMillis()).toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"}) : "—";
+        const stars = "★".repeat(Math.floor(r.rating)) + (r.rating%1>=0.5?"½":"") + "☆".repeat(5-Math.ceil(r.rating));
+        list.innerHTML += `
+          <div class="review-card">
+            <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
+              <div style="display:flex; align-items:center; gap:1rem;">
+                <div class="avatar-initials">${(r.authorName||"?")[0].toUpperCase()}</div>
+                <div>
+                  <div style="font-weight:600;">${r.authorName || "Anonymous"}</div>
+                  ${r.verified ? '<small style="color:#4ade80;">Verified Buyer</small>' : ''}
+                </div>
+              </div>
+              <small style="color:#888;">${date}</small>
+            </div>
+            <div style="color:#f5c518; margin-bottom:0.6rem; letter-spacing:1px;">${stars.split("").map(s=>`<span>${s}</span>`).join("")}</div>
+            <h5 style="margin:0.4rem 0; font-size:1.15rem;">${r.title || ""}</h5>
+            <p style="color:#ddd; line-height:1.6;">${r.comment || ""}</p>
+          </div>`;
+      });
+
+      if(count > 12){
+        list.innerHTML += `<button style="margin-top:1.5rem; color:#aaa; background:none; border:none; font-weight:600; cursor:pointer;">View all ${count} reviews →</button>`;
+      }
+
+    } catch(e){
+      console.error(e);
+      document.getElementById("reviews-list").innerHTML = '<p style="color:#f87171; text-align:center; padding:4rem 0;">Could not load reviews right now.</p>';
+    }
+  }
+
+  // Real-time updates
+  let unsub = null;
+  function listenReviews(){
+    if(unsub) unsub();
+    unsub = db.collection(`reviews/${PRODUCT_ID}/reviews`)
+              .orderBy("createdAt","desc")
+              .onSnapshot(() => loadReviews(), err => console.error("Listener error:",err));
+  }
+
+  // Form Submit
+  document.getElementById("reviewForm")?.addEventListener("submit", async e => {
+    e.preventDefault();
+    const btn = document.getElementById("submitReviewBtn");
+    const msg = document.getElementById("formMessage");
+    btn.disabled = true;
+    msg.textContent = "Submitting...";
+
+    try {
+      const rating = document.querySelector('input[name="rating"]:checked')?.value;
+      if(!rating) throw new Error("Please select a rating");
+
+      const title   = document.getElementById("reviewTitle").value.trim();
+      const comment = document.getElementById("reviewComment").value.trim();
+      const name    = document.getElementById("reviewName").value.trim() || "Anonymous";
+
+      if(comment.length < 10) throw new Error("Review is too short");
+
+      await db.collection(`reviews/${PRODUCT_ID}/reviews`).add({
+        rating: Number(rating),
+        title,
+        comment,
+        authorName: name,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        verified: false
+      });
+
+      msg.style.color = "#4ade80";
+      msg.textContent = "Review submitted successfully!";
+      document.getElementById("reviewForm").reset();
+    } catch(err){
+      msg.style.color = "#f87171";
+      msg.textContent = err.message || "Failed to submit review.";
+      console.error(err);
+    } finally {
+      btn.disabled = false;
+    }
+  });
+
+  // Start
+  document.addEventListener("DOMContentLoaded", () => {
+    loadReviews();
+    listenReviews();
+  });
+</script>
+

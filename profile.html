@@ -1,0 +1,1036 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="codegrid" />
+    <title>Lara perfumes</title>
+    <!-- Firebase App (core) + Firestore -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script> -->
+    <!-- Google Fonts for Material Symbols -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <style>
+      .profile-page {
+        max-width: 1200px;
+        margin: 120px auto;
+        padding: 20px;
+      }
+
+      .profile-header {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        background: #fff;
+        padding: 25px;
+        border-radius: 14px;
+        margin-bottom: 30px;
+      }
+
+      .profile-avatar {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background: var(--special-color);
+        color: #fff;
+        font-size: 28px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .logout-btn {
+        margin-top: 8px;
+        background: #8b0000;
+        color: #fff;
+        border: none;
+        padding: 8px 18px;
+        border-radius: 999px;
+        cursor: pointer;
+      }
+
+      .profile-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+      }
+
+      .profile-card {
+        background: #fff;
+        padding: 22px;
+        border-radius: 14px;
+        min-height: 200px;
+      }
+
+      .profile-card h3 {
+        margin-bottom: 15px;
+        color: var(--special-color);
+      }
+
+      .info-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      .list-box {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .list-item {
+        padding: 12px;
+        border-radius: 8px;
+        background: #f4f4f4;
+        font-size: 14px;
+      }
+
+      .empty {
+        opacity: 0.6;
+        font-size: 14px;
+      }
+
+      :root {
+        --special-color: #7f4c21;
+      }
+      .second-screen {
+        display: block !important;
+      }
+      .page-bestseller {
+        display: block;
+      }
+      .content {
+        overflow-x: hidden !important;
+        min-height: calc(100vh - 100px) !important;
+        height: auto !important;
+        padding: 0 0 60px !important;
+        top: -100px;
+      }
+      .container {
+        background: #fff8f3 !important;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .nav {
+        top: 0 !important;
+      }
+
+      .container-product {
+        background: #fff8f3 !important;
+      }
+      .speacial-text-container {
+        top: 100px;
+      }
+      .star-rating-input {
+        direction: rtl; /* important trick */
+        display: inline-block;
+      }
+
+      .star-rating-input label {
+        color: #444;
+        transition: color 0.2s;
+        cursor: pointer;
+      }
+
+      .star-rating-input input[type="radio"]:checked ~ label,
+      .star-rating-input label:hover,
+      .star-rating-input label:hover ~ label {
+        color: #f5c518; /* gold / yellow */
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/CustomEase.min.js"></script>
+    <link rel="stylesheet" href="static/css/master.css" />
+    <link rel="stylesheet" href="static/css/product.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.20/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <!-- <script src="main.js"></script> -->
+  </head>
+  <body>
+    <div class="section-indicator">
+      <span class="section-text">hero-01</span>
+    </div>
+    <nav class="nav">
+      <!-- menu -->
+
+      <!-- <div class="menu-toggle closed">
+        <div class="menu-toggle-icon">
+          <div class="hamburger">
+            <div class="menu-bar" data-position="top"></div>
+            <div class="menu-bar" data-position="bottom"></div>
+          </div>
+        </div>
+        <div class="menu-copy"><p>Menu</p></div>
+      </div> -->
+
+      <!-- <div class="menu-toggle closed">
+        <div class="menu-toggle-icon">
+          <div class="hamburger">
+            <div class="menu-bar" data-position="top"></div>
+            <div class="menu-bar" data-position="bottom"></div>
+          </div>
+        </div>
+        <div class="menu-copy"><p>Menu</p></div>
+      </div> -->
+
+      <div class="menu">
+        <div class="col col-1">
+          <!-- <div class="menu-logo"><a href="#">LARA</a></div> -->
+          <div class="links">
+            <div class="link">
+              <a href="perfumes.html">Perfumes</a>
+            </div>
+            <div class="link">
+              <a href="samples.html">samples</a>
+            </div>
+            <div class="link">
+              <a href="collections.html">collections</a>
+            </div>
+            <div class="link"><a href="story.html">story</a></div>
+          </div>
+          <div class="video-wrapper">
+            <video autoplay muted loop>
+              <!-- <source src="static/img/thevideo.mp4" type="video/mp4" /> -->
+            </video>
+          </div>
+        </div>
+
+        <div class="col col-2">
+          <div class="socials">
+            <div class="sub-col">
+              <p>none</p>
+              <p>9 quo Androe Rockfield</p>
+              <p>69801 Ontario</p>
+              <p>Canada</p>
+              <br />
+              <p>mohamadallosh@hotmail.com</p>
+              <p></p>
+            </div>
+            <div class="sub-col">
+              <p>Instagram</p>
+              <p>LinkedIn</p>
+              <p>Twitter</p>
+              <p>Facebook</p>
+              <br />
+              <p>01 02 030 04 05</p>
+            </div>
+          </div>
+
+          <div class="header">
+            <h1>LARA</h1>
+          </div>
+        </div>
+      </div>
+      <!-- menu -->
+      <ul class="items-left">
+        <li class="menu-button">
+          <div class="menu-toggle closed">
+            <div class="menu-toggle-icon">
+              <div class="hamburger">
+                <div class="menu-bar" data-position="top"></div>
+                <div class="menu-bar" data-position="bottom"></div>
+              </div>
+            </div>
+            <div class="menu-copy"><p>Menu</p></div>
+          </div>
+        </li>
+        <li class="show-item">
+          <a href="perfumes.html">
+            <div class="navigation-item">
+              <div class="shape"></div>
+              <span class="text">Perfumes</span>
+            </div>
+          </a>
+        </li>
+        <li class="show-item">
+          <a href="samples.html">
+            <div class="navigation-item">
+              <div class="shape"></div>
+              <span class="text">samples</span>
+            </div>
+          </a>
+        </li>
+        <li class="show-item">
+          <a href="collections.html">
+            <div class="navigation-item">
+              <div class="shape"></div>
+              <span class="text">collections</span>
+            </div>
+          </a>
+        </li>
+        <li class="show-item">
+          <a href="story.html">
+            <div class="navigation-item">
+              <div class="shape"></div>
+              <span class="text">story</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <ul></ul>
+      <ul class="items-right">
+        <li>
+          <a href="https://lara-perfumes-2.myshopify.com/account/register">
+            <div class="navigation-item">
+              <div class="shape"></div>
+              <span class="text">profile</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#cart">
+            <div class="navigation-item">
+              <div class="shape"></div>
+              <span class="text">cart</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="logo-container">
+      <div class="logo">
+        <a href="index.html" class="logo-link">
+          <h1 class="logo-text">LARA</h1>
+        </a>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="content">
+        <!-- collection section -->
+        <div class="speacial-text-container">
+          <h2 class="special-heading">profile</h2>
+          <p></p>
+        </div>
+        <main class="profile-page">
+          <!-- PROFILE HEADER -->
+          <section class="profile-header">
+            <div class="profile-avatar">M</div>
+            <div>
+              <h2 id="userName">Mohamad</h2>
+              <p id="userEmail">mohamad@example.com</p>
+              <button class="logout-btn">Log Out</button>
+            </div>
+          </section>
+
+          <!-- DASHBOARD GRID -->
+          <div class="profile-grid">
+            <!-- USER INFO -->
+            <section class="profile-card">
+              <h3>Account Information</h3>
+              <div class="info-row">
+                <span>Full Name:</span>
+                <strong id="infoName">Loading...</strong>
+              </div>
+              <div class="info-row">
+                <span>Email:</span>
+                <strong id="infoEmail">loading...</strong>
+              </div>
+              <div class="info-row">
+                <span>Member Since:</span> <strong>2025</strong>
+              </div>
+            </section>
+
+            <!-- ORDERS -->
+            <section class="profile-card">
+              <h3>Your Orders</h3>
+              <div id="ordersList" class="list-box">
+                <p class="empty">No orders yet.</p>
+              </div>
+            </section>
+
+            <!-- COMMENTS / REVIEWS -->
+            <section class="profile-card">
+              <h3>Your Reviews</h3>
+              <div id="reviewsList" class="list-box">
+                <p class="empty">No reviews yet.</p>
+              </div>
+            </section>
+          </div>
+        </main>
+
+        <footer class="footer">
+          <div class="container-about">
+            <!-- Header Section -->
+            <div class="speacial-text-container">
+              <h2 class="special-heading about">Connect With Us</h2>
+              <p>Stay in touch and explore more</p>
+            </div>
+
+            <!-- Footer Content -->
+            <div class="footer-content">
+              <!-- Quick Links -->
+              <div class="footer-section quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                  <li>
+                    <a href="#home" class="navigation-item">
+                      <span class="shape"></span>
+                      <span class="text">Home</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#products" class="navigation-item">
+                      <span class="shape"></span>
+                      <span class="text">Products</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#about" class="navigation-item">
+                      <span class="shape"></span>
+                      <span class="text">About</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#contact" class="navigation-item">
+                      <span class="shape"></span>
+                      <span class="text">Contact</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Social Media -->
+              <div class="footer-section socials">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                  <a
+                    href="https://twitter.com"
+                    target="_blank"
+                    class="navigation-item"
+                  >
+                    <span class="shape"></span>
+                    <span class="text">Twitter</span>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/lara.perfum/?utm_source=qr&igsh=eWw1NWE1d2p5NG5r#"
+                    target="_blank"
+                    class="navigation-item"
+                  >
+                    <span class="shape"></span>
+                    <span class="text">Instagram</span>
+                  </a>
+                  <a
+                    href="https://linkedin.com"
+                    target="_blank"
+                    class="navigation-item"
+                  >
+                    <span class="shape"></span>
+                    <span class="text">LinkedIn</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Contact Info -->
+              <div class="footer-section contact-info">
+                <h3>Contact</h3>
+                <p>
+                  Email:
+                  <a href="mailto:mohamadallosh@hotmail.com"
+                    >mohamadallosh@hotmail.com</a
+                  >
+                </p>
+                <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                <p>Calgary, Canada | Online Store</p>
+              </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom">
+              <p>&copy; 2025 Your Brand. All rights reserved.</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Side Cart -->
+    <div
+      id="sideCart"
+      class="side-cart"
+      style="
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 24rem;
+        background: #fff;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
+      "
+    >
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 15px;
+          border-bottom: 1px solid #ccc;
+        "
+      >
+        <h2 style="font-size: 1.5rem; font-weight: 600">Your Cart</h2>
+        <button
+          id="closeCart"
+          style="
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+          "
+        >
+          <span class="material-symbols-outlined">x</span>
+        </button>
+      </div>
+
+      <div id="cartItems" style="flex: 1; overflow-y: auto; padding: 15px">
+        <!-- Cart items will be injected here -->
+        <p style="color: #777">Your cart is empty.</p>
+      </div>
+
+      <div style="padding: 15px; border-top: 1px solid #ccc">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+          "
+        >
+          <span style="font-weight: 600">Subtotal</span>
+          <span id="cartSubtotal">$0.00</span>
+        </div>
+        <button
+          style="
+            width: 100%;
+            background: #d97706;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+          "
+        >
+          View Cart
+        </button>
+        <button
+          style="
+            width: 100%;
+            background: #fff;
+            color: #333;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+          "
+        >
+          Checkout
+        </button>
+      </div>
+    </div>
+
+    <!-- Overlay when cart is open -->
+    <div
+      id="cartOverlay"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        z-index: 999;
+      "
+    ></div>
+
+    <!-- ==================== QUICK VIEW MODAL (Pure HTML + CSS) ==================== -->
+    <div id="quickViewModal" class="qv-modal">
+      <div id="quickViewContent" class="qv-content">
+        <!-- LEFT: Product Image -->
+        <div class="qv-image-container">
+          <img id="modalImage" src="" alt="Perfume" class="qv-image" />
+        </div>
+
+        <!-- RIGHT: Product Details -->
+        <div class="qv-details">
+          <button onclick="closeQuickView()" class="qv-close-btn">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+
+          <div class="qv-details-inner">
+            <!-- Title -->
+            <div class="qv-title-section">
+              <h3 id="modalTitle" class="qv-title"></h3>
+              <p class="qv-subtitle">100 ml</p>
+            </div>
+
+            <!-- Stock & Sales -->
+            <div class="qv-status">
+              <span class="qv-in-stock">
+                <span class="material-symbols-outlined">check_circle</span>
+                In Stock
+              </span>
+              <!-- <span class="qv-sold">
+                <span class="material-symbols-outlined"
+                  >local_fire_department</span
+                >
+                <span id="modalSold">63143</span> sold
+              </span> -->
+            </div>
+
+            <!-- Reviews Section -->
+            <div class="qv-reviews-section">
+              <div class="qv-overall-rating">
+                <span class="qv-stars">★★★★★</span>
+                <span class="qv-review-count">(14 reviews)</span>
+              </div>
+
+              <div class="qv-customer-reviews">
+                <div class="qv-review-item">
+                  <div class="qv-review-header">
+                    <span class="qv-review-name">Lina R.</span>
+                    <span class="qv-stars-sm">★★★★★</span>
+                  </div>
+                  <p class="qv-review-text">
+                    Obsessed! Smells expensive and unique. Already bought two
+                    bottles.
+                  </p>
+                </div>
+              </div>
+
+              <!-- <button class="qv-view-all-reviews">
+                View all 214 reviews
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </button> -->
+            </div>
+
+            <!-- Price -->
+            <div class="qv-price">
+              <span id="modalDiscountPrice" class="qv-old-price"></span>
+              <span id="modalPrice" class="qv-new-price">$50</span>
+            </div>
+
+            <!-- Try-on Text -->
+            <div class="qv-try-on">
+              <p>Try it on your skin and choose the best option for you</p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="qv-actions">
+              <button class="qv-add-to-cart">
+                <span class="material-symbols-outlined">shopping_bag</span>
+                Add to Cart
+              </button>
+              <button class="qv-buy-now">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Toast Notification (Top-Left) -->
+    <div id="authToast" class="auth-toast">
+      <span class="material-symbols-outlined">warning</span>
+      <span
+        >Please
+        <a
+          href="sign_in.html"
+          style="color: #d97706; text-decoration: underline"
+          >sign in</a
+        >
+        to add favorites.</span
+      >
+    </div>
+    <script type="text/javascript">
+      /*<![CDATA[*/
+      (function () {
+        var scriptURL =
+          "https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js";
+        if (window.ShopifyBuy) {
+          if (window.ShopifyBuy.UI) {
+            ShopifyBuyInit();
+          } else {
+            loadScript();
+          }
+        } else {
+          loadScript();
+        }
+        function loadScript() {
+          var script = document.createElement("script");
+          script.async = true;
+          script.src = scriptURL;
+          (
+            document.getElementsByTagName("head")[0] ||
+            document.getElementsByTagName("body")[0]
+          ).appendChild(script);
+          script.onload = ShopifyBuyInit;
+        }
+        function ShopifyBuyInit() {
+          var client = ShopifyBuy.buildClient({
+            domain: "ydmggt-mr.myshopify.com",
+            storefrontAccessToken: "9d3f54a067ce1ef505736f5ad45131fc",
+          });
+          ShopifyBuy.UI.onReady(client).then(function (ui) {
+            ui.createComponent("product", {
+              id: "8156918481011",
+              node: document.getElementById("product-component-1767968008927"),
+              moneyFormat: "%24%7B%7Bamount%7D%7D",
+              options: {
+                product: {
+                  styles: {
+                    product: {
+                      "@media (min-width: 601px)": {
+                        "max-width": "calc(25% - 20px)",
+                        "margin-left": "20px",
+                        "margin-bottom": "50px",
+                      },
+                    },
+                    button: {
+                      "font-family": "Geneva, sans-serif",
+                      "font-size": "15px",
+                      "font-weight": "600",
+
+                      /* SIZE */
+                      "padding-top": "12px",
+                      "padding-bottom": "12px",
+                      "padding-left": "28px",
+                      "padding-right": "28px",
+                      "min-height": "46px",
+                      "min-width": "220px", // makes it wide like the image
+
+                      /* SHAPE */
+                      "border-radius": "999px", // pill shape
+
+                      "background-color": "#8b0000",
+                      color: "#fff",
+                      "text-decoration": "none",
+                      "white-space": "nowrap",
+                      overflow: "visible",
+                      "text-overflow": "clip",
+
+                      transition: "background 0.2s ease, transform 0.15s ease",
+
+                      ":hover": {
+                        "background-color": "#660000",
+                      },
+                      ":focus": {
+                        "background-color": "#660000",
+                      },
+                    },
+                    quantityInput: {
+                      "font-size": "13px",
+                      "padding-top": "14.5px",
+                      "padding-bottom": "14.5px",
+                    },
+                  },
+                  contents: {
+                    img: false,
+                    title: false,
+                    price: false,
+                  },
+                  text: {
+                    button: "Add to cart",
+                  },
+                },
+                productSet: {
+                  styles: {
+                    products: {
+                      "@media (min-width: 601px)": {
+                        "margin-left": "-20px",
+                      },
+                    },
+                  },
+                },
+                modalProduct: {
+                  contents: {
+                    img: false,
+                    imgWithCarousel: true,
+                    button: false,
+                    buttonWithQuantity: true,
+                  },
+                  styles: {
+                    product: {
+                      "@media (min-width: 601px)": {
+                        "max-width": "100%",
+                        "margin-left": "0px",
+                        "margin-bottom": "0px",
+                      },
+                    },
+                    button: {
+                      "font-family": "Geneva, sans-serif",
+                      "font-size": "15px",
+                      "font-weight": "600",
+
+                      /* SIZE */
+                      "padding-top": "12px",
+                      "padding-bottom": "12px",
+                      "padding-left": "28px",
+                      "padding-right": "28px",
+                      "min-height": "46px",
+                      "min-width": "220px", // makes it wide like the image
+
+                      /* SHAPE */
+                      "border-radius": "999px", // pill shape
+
+                      "background-color": "#8b0000",
+                      color: "#fff",
+                      "text-decoration": "none",
+                      "white-space": "nowrap",
+                      overflow: "visible",
+                      "text-overflow": "clip",
+
+                      transition: "background 0.2s ease, transform 0.15s ease",
+
+                      ":hover": {
+                        "background-color": "#660000",
+                      },
+                      ":focus": {
+                        "background-color": "#660000",
+                      },
+                    },
+                    quantityInput: {
+                      "font-size": "13px",
+                      "padding-top": "14.5px",
+                      "padding-bottom": "14.5px",
+                    },
+                  },
+                  text: {
+                    button: "Add to cart",
+                  },
+                },
+                option: {},
+                cart: {
+                  styles: {
+                    button: {
+                      "font-size": "13px",
+                      "padding-top": "14.5px",
+                      "padding-bottom": "14.5px",
+                      ":hover": {
+                        "background-color": "#000000",
+                      },
+                      "background-color": "#000000",
+                      ":focus": {
+                        "background-color": "#000000",
+                      },
+                      "border-radius": "40px",
+                    },
+                  },
+                  text: {
+                    total: "Subtotal",
+                    button: "Checkout",
+                  },
+                  contents: {
+                    note: true,
+                  },
+                  popup: false,
+                },
+                toggle: {
+                  styles: {
+                    toggle: {
+                      "background-color": "#000000",
+                      ":hover": {
+                        "background-color": "#000000",
+                      },
+                      ":focus": {
+                        "background-color": "#000000",
+                      },
+                    },
+                    count: {
+                      "font-size": "13px",
+                    },
+                  },
+                },
+              },
+            });
+          });
+        }
+      })();
+      /*]]>*/
+    </script>
+    <script>
+      // Simple thumbnail switching
+      const thumbs = document.querySelectorAll(".thumb-btn");
+      const mainImg = document.querySelector(".main-image");
+
+      thumbs.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          thumbs.forEach((t) => t.classList.remove("active"));
+          btn.classList.add("active");
+          mainImg.src = btn.querySelector("img").src;
+        });
+      });
+    </script>
+    <!-- Firebase App (core) + Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+
+    <script>
+      /* ───────────────── Firebase Init ───────────────── */
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyCJ2OWTPNbsHmHxMK5W7HQ0CqWm62Z-YQs",
+        authDomain: "lara-76102.firebaseapp.com",
+        projectId: "lara-76102",
+        storageBucket: "lara-76102.firebasestorage.app",
+        messagingSenderId: "628256871308",
+        appId: "1:628256871308:web:c7f854921a683a3f72bca9",
+        measurementId: "G-XKFL5M40TH",
+      };
+
+      firebase.initializeApp(firebaseConfig);
+
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+
+      /* ───────────────── Auth Guard + Profile Load ───────────────── */
+
+      auth.onAuthStateChanged(async (user) => {
+        if (!user) {
+          window.location.href = "sign_in.html";
+          return;
+        }
+
+        try {
+          const snap = await db.collection("users").doc(user.uid).get();
+
+          const nameEl = document.getElementById("infoName");
+          const emailEl = document.getElementById("infoEmail");
+          const avatarEl = document.querySelector(".profile-avatar");
+          const headerName = document.getElementById("userName");
+          const headerEmail = document.getElementById("userEmail");
+
+          if (snap.exists) {
+            const data = snap.data();
+
+            const name = data.name || user.displayName || "User";
+            const email = data.email || user.email || "";
+
+            if (nameEl) nameEl.textContent = name;
+            if (emailEl) emailEl.textContent = email;
+            if (headerName) headerName.textContent = name;
+            if (headerEmail) headerEmail.textContent = email;
+
+            if (avatarEl) {
+              avatarEl.textContent = name.charAt(0).toUpperCase();
+            }
+          } else {
+            // fallback if Firestore document missing
+            if (nameEl) nameEl.textContent = user.displayName || "User";
+            if (emailEl) emailEl.textContent = user.email || "";
+          }
+
+          // Load user data
+          loadUserOrders(user.uid);
+          loadUserReviews(user.uid);
+        } catch (err) {
+          console.error("Profile loading failed:", err);
+        }
+      });
+
+      /* ───────────────── Orders ───────────────── */
+
+      async function loadUserOrders(uid) {
+        const list = document.getElementById("ordersList");
+        if (!list) return;
+
+        list.innerHTML = `<p class="empty">Loading...</p>`;
+
+        try {
+          const snap = await db
+            .collection("orders")
+            .where("userId", "==", uid)
+            .orderBy("createdAt", "desc")
+            .get();
+
+          if (snap.empty) {
+            list.innerHTML = `<p class="empty">No orders yet.</p>`;
+            return;
+          }
+
+          list.innerHTML = "";
+
+          snap.forEach((doc) => {
+            const o = doc.data();
+            list.innerHTML += `
+        <div class="list-item">
+          <strong>${o.product || "Product"}</strong><br>
+          Order #${doc.id}<br>
+          $${o.total || 0} — ${o.status || "processing"}
+        </div>
+      `;
+          });
+        } catch (err) {
+          console.error("Orders load error:", err);
+          list.innerHTML = `<p class="empty">Failed to load orders.</p>`;
+        }
+      }
+
+      /* ───────────────── Reviews ───────────────── */
+
+      async function loadUserReviews(uid) {
+        const list = document.getElementById("reviewsList");
+        if (!list) return;
+
+        list.innerHTML = `<p class="empty">Loading...</p>`;
+
+        try {
+          const snap = await db
+            .collectionGroup("reviews")
+            .where("authorId", "==", uid)
+            .orderBy("createdAt", "desc")
+            .get();
+
+          if (snap.empty) {
+            list.innerHTML = `<p class="empty">No reviews yet.</p>`;
+            return;
+          }
+
+          list.innerHTML = "";
+
+          snap.forEach((doc) => {
+            const r = doc.data();
+            list.innerHTML += `
+        <div class="list-item">
+          <strong>${r.productName || "Product"}</strong><br>
+          ⭐ ${r.rating || 0}/5<br>
+          ${r.comment || ""}
+        </div>
+      `;
+          });
+        } catch (err) {
+          console.error("Reviews load error:", err);
+          list.innerHTML = `<p class="empty">Failed to load reviews.</p>`;
+        }
+      }
+
+      /* ───────────────── Logout ───────────────── */
+
+      const logoutBtn = document.querySelector(".logout-btn");
+      if (logoutBtn) {
+        logoutBtn.addEventListener("click", async () => {
+          await auth.signOut();
+          window.location.href = "index.html";
+        });
+      }
+    </script>
+
+    <script src="static/js/shopify_products.js"></script>
+    <script src="static/js/main.js"></script>
+  </body>
+</html>
